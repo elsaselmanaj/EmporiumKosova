@@ -1,0 +1,44 @@
+.mode-switcher-container{
+  .mode-switch{
+    display: flex;
+    align-items: center;
+    color:#999ba5;
+    font-size: max(15px, 1vw);
+    border:1px solid #7a7a88;
+    overflow: hidden;
+    border-radius:max(20px, 1vw);
+    margin-right: max(10px, 1vw);
+  }
+  .mode-switch .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding:max(10px, 0.5vw) max(14px, 0.7vw);
+    border-radius:max(20px, 1vw);
+  }
+  .icon1{
+    background: transparent;
+    color:#ffbb00;
+  }
+}
+body.dark-mode{
+  .mode-switcher-container{
+    .icon1{
+      background: none;
+      color:#fff;
+    }
+    .icon2{
+      background: transparent;
+      color:#ffbb00;
+    }
+  }
+}
+
+
+.nav .mode-switch{
+  display: none !important;
+}
+.footer .nav-mode-switch{
+  display: none !important;
+}

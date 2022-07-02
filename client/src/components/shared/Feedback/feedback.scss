@@ -1,0 +1,129 @@
+.feedback-container {
+  margin: max(50px, 5%) 0;
+  padding: 0 7.5%;
+
+  @media (max-width: 1200px) {
+    padding: 0 5.5%;
+  }
+
+  .heart {
+    margin: 0 auto;
+    text-align: center;
+    font-size: max(25px, 2.25vw);
+    color: #ec3625;
+  }
+
+  h2 {
+    font-size: max(22px, 1.75vw);
+    text-align: center;
+  }
+
+  .rec-pagination {
+    display: none;
+  }
+
+  .slider-container {
+    position: relative;
+
+    .rec-swipable {
+      align-items: stretch;
+    }
+  }
+
+  .slider {
+    position: relative;
+    margin: max(30px, 3vw) 0;
+  }
+
+  .slider-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: max(20px, 2vw);
+
+    &:hover {
+      .shadow {
+        opacity: 1;
+      }
+    }
+
+    .shadow {
+      position: absolute;
+      height: calc(100% - max(1px, 0.1vw));
+      width: calc(100% - max(1px, 0.1vw));
+      bottom: max(-13px, -1.5vw);
+      left: max(-13px, -1.5vw);
+      background: #ffa02d52;
+      border: 2px solid #ffa12d;
+      border-radius: max(10px, 0.8vw);
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+      opacity: 0;
+    }
+
+    .inner {
+      flex: 1 1;
+      background: #fff;
+      border: 1px solid #ffa12d;
+      border-radius: max(10px, 0.8vw);
+      padding: max(15px, 1.5vw);
+      position: relative;
+      z-index: 2;
+
+      .quotes {
+        font-size: max(30px, 3.5vw);
+        color: #e8e9ea;
+      }
+
+      .comment {
+        font-size: max(14px, 0.8vw);
+        margin: 0 0 max(15px, 1.5vw);
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .inline {
+          display: flex;
+          align-items: center;
+
+          .profile {
+            width: max(35px, 2.5vw);
+            border-radius: 50%;
+            margin-right: max(7.5px, 0.75vw);
+          }
+
+          h6 {
+            font-size: max(12px, 0.775vw);
+            font-weight: 500;
+          }
+        }
+
+        .reviews {
+          //  margin:max(15px, 1vw) 0 max(7.5px, 0.5vw);
+          display: flex;
+          align-items: center;
+          svg {
+            font-size: max(15px, 0.9vw);
+            color: #efaa1a;
+          }
+          span {
+            margin-left: max(7.5px, 0.5vw);
+            font-size: max(12px, 0.875vw);
+          }
+        }
+
+        @media (max-width: 450px) {
+          flex-direction: column;
+          .reviews {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}

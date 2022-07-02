@@ -1,0 +1,53 @@
+.home-page .info-container {
+  margin: max(50px, 5%) 0;
+  padding: 0 7.5%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    padding: 0 3.5%;
+  }
+
+  @media (max-width: 820px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 30px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    // border: 1px solid red;
+    width: 22%;
+
+    .icon {
+      height: max(35px, 3.2vw);
+      margin-right: 20px;
+      width: max(35px, 3.2vw);
+    }
+
+    .block {
+      h6 {
+        font-size: max(12px, 0.9vw);
+      }
+      p {
+        font-size: max(11px, 0.83vw);
+        margin-top: 5px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      display: flex;
+      width: 35%;
+    }
+
+    @media (max-width: 510px) {
+      width: 45%;
+    }
+
+    @media (max-width: 400px) {
+      width: 65%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.shared-banner {
+  padding: 15.5% 7.5% 11.5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  //background-attachment: fixed;
+  width: 100%;
+
+  h1 {
+    font-size: max(30px, 2.6vw);
+    text-align: center;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-animation: tracking-in-expand 0.7s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  @media (max-width: 800px) {
+    padding: 185px 7.5% 125px;
+    background-attachment: unset;
+  }
+}
+
+.products-catalog-page,
+.shopping-cart-page,
+.about-us-page,
+.contact-us-page,
+.blog-page {
+  overflow: hidden;
+}
+
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

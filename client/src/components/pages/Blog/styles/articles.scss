@@ -1,0 +1,226 @@
+.blog-page {
+  .articles-container,
+  .popular-articles-container {
+    margin: max(50px, 5%) 0;
+    padding: 0 7.5%;
+
+    @media (max-width: 1200px) {
+      padding: 0 5.5%;
+    }
+
+    .items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 18.5px;
+        margin: 20px 0;
+        &:hover {
+          .img {
+            transform: scale(1.05);
+            filter: brightness(0.75);
+          }
+        }
+
+        .img-container {
+          overflow: hidden;
+          width: 100%;
+          border-top-left-radius: 18.5px;
+          border-top-right-radius: 18.5px;
+          position: relative;
+          .img {
+            width: 100%;
+            transition: 0.35s ease-in-out;
+          }
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1 1;
+          padding: max(13px, 1.5vw) max(14px, 2vw);
+
+          h5 {
+            display: flex;
+            align-items: center;
+            margin: max(5px, 0.25vw) 0 max(12px, 1.2vw);
+            font-size: max(14px, 0.9vw);
+
+            svg {
+              color: #eb8341;
+              margin-right: max(5px, 0.6vw);
+            }
+          }
+
+          p {
+            font-size: max(12.5px, 0.85vw);
+            margin: 0 0 max(20px, 1.5vw);
+          }
+
+          .bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .inline {
+              display: flex;
+              align-items: center;
+
+              .profile {
+                width: max(35px, 1vw);
+              }
+
+              h6 {
+                font-size: max(13px, 0.75vw);
+                margin-left: max(5px, 0.6vw);
+              }
+            }
+
+            small {
+              display: flex;
+              align-items: center;
+              font-size: max(12.5px, 0.8vw);
+
+              .small1,
+              .small2 {
+                display: flex;
+                align-items: center;
+              }
+
+              svg {
+                color: #555;
+                margin-right: max(3px, 0.3vw);
+              }
+
+              .dot {
+                color: #eb8341;
+                margin-left: max(3px, 0.3vw);
+              }
+            }
+          }
+        }
+      }
+
+      .item1 {
+        width: 63%;
+
+        @media (max-width: 1080px) {
+          width: 64%;
+        }
+
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
+
+        @media (max-width: 700px) {
+          width: 550px;
+          max-width: 100%;
+          margin: 20px auto;
+        }
+      }
+
+      .item2 {
+        width: 33.5%;
+
+        @media (max-width: 1080px) {
+          width: 34.5%;
+        }
+
+        @media (max-width: 1000px) {
+          width: 48%;
+        }
+
+        @media (max-width: 700px) {
+          width: 550px;
+          max-width: 100%;
+          margin: 20px auto;
+        }
+      }
+
+      .item1,
+      .item2 {
+        @media (max-width: 365px) {
+          .content {
+            h5 {
+              text-align: center;
+              margin: max(5px, 0.25vw) auto max(12px, 1.2vw);
+              svg {
+                display: none;
+              }
+            }
+
+            p {
+              text-align: center;
+              margin: 0 auto max(20px, 1.5vw);
+            }
+
+            .bottom {
+              flex-direction: column;
+              small {
+                margin-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popular-articles-container {
+    h2 {
+      font-size: max(22px, 1.75vw);
+      text-align: center;
+      margin-bottom: max(25px, 2vw);
+    }
+
+    .items {
+      @media (max-width: 1150px) {
+        justify-content: center;
+        gap: max(20px, 3vw);
+      }
+
+      .item {
+        width: 30%;
+
+        @media (max-width: 1300px) {
+          width: 32%;
+        }
+        @media (max-width: 1150px) {
+          width: 47.5%;
+          margin: 0;
+        }
+
+        @media (max-width: 720px) {
+          width: 650px;
+          max-width: 100%;
+          margin: 10px auto;
+
+          .content{
+            h5 {
+              text-align: center;
+              margin: max(5px, 0.25vw) auto max(12px, 1.2vw);
+              svg {
+                display: none;
+              }
+            }
+          }
+        }
+
+        @media(max-width: 350px){
+          .bottom {
+            flex-direction: column;
+            small {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.home-page .trends-container {
+  margin: 5% 0;
+  padding: 7% 7.5%;
+  background-image: url("../../../../assets/trends/trends-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  .trends-text {
+    backdrop-filter: blur(max(10px, 0.8vw));
+    -webkit-backdrop-filter: blur(max(10px, 0.8vw));
+    background: #e7f5f877;
+    margin: 0 auto;
+    width: 45%;
+    text-align: center;
+    padding: 2% 5.5%;
+    border-radius: 8px;
+
+    @media(max-width: 785px){
+      width: 60%;
+    }
+
+    @media(max-width: 500px){
+      width: 90%;
+    }
+
+    .year {
+      color: #ec3625;
+      font-size: max(20px, 2.5vw);
+    }
+
+    .title {
+      font-size: max(20px, 2.5vw);
+      margin: max(10px, 1.8vw) 0;
+    }
+
+    p {
+      font-size: max(15px, 2vw);
+    }
+
+    .circle {
+      width: 10%;
+      padding-top: 10%;
+      border-radius: 50%;
+      position: absolute;
+      transition: 0.3s ease-in-out;
+      -webkit-transition: 0.3s ease-in-out;
+      &:hover {
+        border-radius: 5%;
+      }
+    }
+
+    .c1 {
+      background: #f79729;
+      opacity: 75%;
+      left: -4.5%;
+      bottom: -11%;
+    }
+
+    .c2 {
+      background: #bbdd7e;
+      opacity: 75%;
+      right: -4.5%;
+      top: -11%;
+    }
+  }
+}

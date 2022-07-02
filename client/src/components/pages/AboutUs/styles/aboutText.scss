@@ -1,0 +1,65 @@
+.about-us-page .about-text-container {
+  margin: max(50px, 5%) 0;
+  padding: 0 7.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .left {
+    width: 41%;
+    background: #e2deda;
+    padding: max(10px, 1vw);
+    overflow: hidden;
+    clip-path: polygon(11% 0, 100% 1%, 100% 85%, 89% 100%, 0 100%, 0 15%);
+
+    .img {
+      content: url("../../../../assets/about/about-text-img.webp");
+      width: 100%;
+      clip-path: polygon(11% 0, 100% 1%, 100% 85%, 89% 100%, 0 100%, 0 15%);
+      transition: 0.35s ease-in-out;
+      -webkit-transition: 0.35s ease-in-out;
+    }
+
+    &:hover .img {
+      transform: scale(1.15);
+      -webkit-transform: scale(1.15);
+    }
+  }
+
+  .right {
+    width: 50.5%;
+
+    span {
+      color: #eb8341;
+      font-size: max(15px, 0.9vw);
+    }
+
+    h1 {
+      font-size: max(23px, 1.6vw);
+      margin: 6px 0;
+    }
+
+    p {
+      font-size: max(14px, 0.95vw);
+      line-height: 1.7;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 5.5%;
+    flex-direction: column-reverse;
+
+    .right {
+      margin: 20px auto;
+      text-align: center;
+      width: 100%;
+    }
+
+    .left {
+      margin: 20px auto;
+      max-width: 100%;
+      width: 400px;
+    }
+  }
+}

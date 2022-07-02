@@ -1,0 +1,116 @@
+.home-page .trending-products-container {
+  margin: max(50px, 5%) 0;
+  padding: 0 7.5%;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    padding: 3.5%;
+  }
+
+  h2 {
+    font-size: max(22px, 1.75vw);
+    text-align: center;
+  }
+
+  .rec-pagination {
+    display: none;
+  }
+  .slider {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .slider-item {
+    position: relative;
+    width: 80%;
+    margin: max(60px, 4vw) 0 0;
+    display: flex;
+    flex-direction: column;
+
+    @media(max-width: 450px){
+        width: 95%;
+    }
+
+    .inner {
+      padding: max(12px, 1.2vw);
+      flex: 1;
+      background: #fff;
+      position: relative;
+      text-align: center;
+      border-radius: max(7px, 0.8vw);
+      border: 1px solid #ddd;
+      .img-container {
+        overflow: hidden;
+        width: 100%;
+        border-radius: 12.5px;
+        .img {
+          width: 100%;
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      p {
+        font-size: max(14px, 0.85vw);
+        margin: max(15px, 1.5vw) 0;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #111;
+        font-size: max(14px, 0.85vw);
+        svg {
+          font-size: max(15px, 1vw);
+          display: flex;
+          align-items: center;
+          margin-left: 8px;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+      }
+    }
+
+    &:hover svg,
+    :focus svg,
+    :active svg {
+      -webkit-animation-name: hvr-icon-buzz;
+      animation-name: hvr-icon-buzz;
+      -webkit-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+    &:hover {
+      .img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@-webkit-keyframes hvr-icon-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-icon-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}

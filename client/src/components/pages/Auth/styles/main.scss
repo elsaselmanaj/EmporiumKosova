@@ -1,0 +1,22 @@
+.login-page,
+.signup-page
+{
+    overflow: hidden;
+}
+
+.login-page,
+.signup-page{
+    .main-component{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.login-page .main-component{
+    background-image: url('../../../../assets/Auth/login-bg.webp');
+}
+
+.signup-page .main-component{
+    background-image: url('../../../../assets/Auth/signup-bg.webp');
+}

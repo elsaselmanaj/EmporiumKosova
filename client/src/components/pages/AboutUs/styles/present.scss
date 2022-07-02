@@ -1,0 +1,101 @@
+.about-us-page .present-container{
+    position: relative;
+    margin: max(50px, 5%) 0;
+
+    .bg{
+        position: absolute;
+        top:12.5%;
+        height: 75%;
+        left:0;
+        width: 100%;
+        background-image: url('../../../../assets/about/present-bg.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .inner-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;    
+        padding:0 7.5%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .img-container{
+        position: relative;
+        width: 22%;
+        padding-top: 22%;
+        border-radius: 50%;
+        background: #fff;
+        .inner-img{
+            width: 90%;
+            height: 90%;
+            position: absolute;
+            border-radius: 50%;
+            top:5%;
+            left:5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #F1F1F1;
+            overflow: hidden;
+            .img{
+                width: 87.5%;
+                height: 87.5%;
+                border-radius: 50%;
+                background: url('../../../../assets/about/ek-logo.webp');
+                background-repeat: no-repeat;
+                background-position:center;
+                background-size: cover;
+                transition: 0.3s ease-in-out;
+                -webkit-transition: 0.3s ease-in-out;
+            }
+        }
+        &:hover .img{
+            transform: scale(1.15);
+            -webkit-transform: scale(1.15);
+        }
+    }
+
+    h1{
+        font-size: max(25px, 2vw);
+        margin:0 max(25px, 2vw);
+        text-align: center;
+        flex: 1;
+    }
+    a{
+        color:#fff;
+        background: #EC3625;
+        padding:max(11px, 0.75vw) max(22.5px, 1.6vw);
+        border-radius: max(22.5px, 1.75vw);
+        font-size: max(15px, 0.9vw);
+        width: fit-content;
+    }
+}
+
+@media(max-width: 900px){
+    .about-us-page .present-container{
+        padding:45px 0;
+        .bg{
+            top:0;
+            height: 100%;
+            background-position: center;
+        }
+
+        .inner-row{ 
+            flex-direction: column; 
+
+            .img-container{
+                width: 180px;
+                padding-top: 180px;
+            }
+
+            h1{
+                margin:25px 0;
+                flex: unset;
+                width: 100%;
+            }
+        }
+    }
+}
