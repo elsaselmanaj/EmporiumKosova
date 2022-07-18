@@ -3,6 +3,7 @@ import Navbar from "../../components/shared/Navbar/Navbar";
 import Banner from "../../components/pages/Home/Banner";
 import Info from "../../components/pages/Home/Info";
 import ImgCollection from "../../components/shared/ImgCollection/ImgCollection";
+import NewArrivals from "../../components/pages/Home/NewArrivals";
 import TrendingProducts from "../../components/pages/Home/TrendingProducts";
 import Trends from "../../components/pages/Home/Trends";
 import Brands from "../../components/shared/Brands/Brands";
@@ -17,6 +18,7 @@ const Home = () => {
             <Banner />
             <Info />
             <ImgCollection />
+            <NewArrivals />
             <TrendingProducts />
             <Trends />
             <Brands />

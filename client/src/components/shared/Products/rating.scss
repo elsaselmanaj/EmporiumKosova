@@ -1,0 +1,17 @@
+.rating{
+    display: inline-flex;
+    align-items: center;
+    margin: max(7px, 0.55vw) 0;
+
+    i{
+        color: #FFCA11;
+        font-size: max(15px, 0.9vw);
+    }
+
+    span{
+        display: flex;
+        align-items: center;
+        font-size: max(15px, 0.9vw);
+        margin-left: max(7.5px, 0.5vw);
+    }
+}

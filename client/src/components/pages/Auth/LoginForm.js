@@ -1,21 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {useDispatch, useSelector} from 'react-redux'
 import "./styles/form.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { BsEnvelope } from "react-icons/bs";
 import { RiLock2Fill } from "react-icons/ri";
 import { FormattedMessage } from "react-intl";
+import {login} from '../../../store/actions/userAction'
 
-const LoginForm = () => {
+const LoginForm = (location) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useNavigate();
+
+  const dispatch = useDispatch();
+  
+  const redirect = location.search ? location.search.split("=")[1] : "/";
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { error, loading, userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo) {
+      history("/");
+    }
+  }, [userInfo, history]);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
 
   return <div className="form-container">
-    <form action="">
+    <form onSubmit={submitHandler}>
 
         <h1><FormattedMessage id="login-title" defaultMessage="Log In"/></h1>
 
-        <p><FormattedMessage id="login-text" defaultMessage="New to EmporiumKosova?"/><Link to='/Signup'><FormattedMessage id="login-signup" defaultMessage="Sign Up"/></Link></p>
+        <p><FormattedMessage id="login-text" defaultMessage="New to EmporiumKosova?"/><Link to={redirect ? `/Signup?redirect=${redirect}`:"/Signup"}><FormattedMessage id="login-signup" defaultMessage="Sign Up"/></Link></p>
 
         <div className="input-content">
             <div className="inner-input-content">
@@ -52,6 +73,7 @@ const LoginForm = () => {
             <Link to='/' className='forgot-pwd'><FormattedMessage id="login-forgot-pwd" defaultMessage="Forgot Password?"/></Link>
         </div>
 
+        <button type="submit" className="hover-button">Login</button>
     </form>
   </div>;
 };

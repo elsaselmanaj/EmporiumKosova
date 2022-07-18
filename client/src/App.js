@@ -20,8 +20,9 @@ import { useSelector } from "react-redux";
 const Home = lazy(() => import("./pages/Home/Home"));
 const Login = lazy (() => import("./pages/Login/Login"))
 const Signup = lazy (() => import("./pages/Signup/Signup"))
+const Profile = lazy(() => import("./pages/Profile/Profile"))
 const ProductsCatalog = lazy (() => import("./pages/ProductsCatalog/ProductsCatalog"))
-
+const ProductPage = lazy (() => import("./pages/ProductPage/ProductPage"))
 const ShoppingCart = lazy (() => import("./pages/ShoppingCart/ShoppingCart"))
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"))
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"))
@@ -51,8 +52,9 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/Login" element={<Login />}/>
             <Route path="/Signup" element={<Signup />}/>
+            <Route path='/Profile' element={<Profile />}/>
             <Route path="/ProductsCatalog" element={<ProductsCatalog />}/>
-
+            <Route path="/ProductPage" element={<ProductPage />}/>
             <Route path="/ShoppingCart" element={<ShoppingCart />}/>
             <Route path="/AboutUs" element={<AboutUs />}/>
             <Route path="/ContactUs" element={<ContactUs />}/>

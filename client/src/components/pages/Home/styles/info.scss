@@ -21,6 +21,21 @@
     // border: 1px solid red;
     width: 22%;
 
+    &:first-child,
+    &:nth-child(3)
+    {
+      .block h6{
+        color: #EC3625;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(4){
+      .block h6{
+        color: #F17913;
+      }
+    }
+
     .icon {
       height: max(35px, 3.2vw);
       margin-right: 20px;

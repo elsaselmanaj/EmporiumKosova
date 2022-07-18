@@ -16,7 +16,7 @@ const ImgCollection = () => {
                         <div className='top-item'>
                                     <h6>{props.title}</h6>
                                     <div className='line'></div>
-                                    <Link to='/'><FormattedMessage id='img-collection-link' defaultMessage="Shop Now"/>  <MdOutlineKeyboardArrowRight /></Link>
+                                    <Link to='/ProductsCatalog' className='hover-button'><FormattedMessage id='img-collection-link' defaultMessage="Shop Now"/>  <MdOutlineKeyboardArrowRight /></Link>
                                 </div>
                     </div>
                 )

@@ -2,8 +2,8 @@
   margin: max(5%, 50px) 0;
   padding: 0 7.5%;
 
-  @media(max-width: 1000px){
-    padding:0 5%;
+  @media (max-width: 1000px) {
+    padding: 0 5%;
   }
 
   .items {
@@ -53,7 +53,7 @@
         flex-direction: column;
         justify-content: flex-end;
         padding: max(30px, 2.5vw) max(20px, 1.75vw);
-       opacity: 0;
+        opacity: 0;
 
         h6 {
           color: #fff;
@@ -61,12 +61,41 @@
           margin: max(15px, 1vw) 0;
         }
 
-        .line{
+        .line {
           width: max(120px, 12vw);
           height: max(3px, 0.2vw);
-          border-radius:max(3px, 0.2vw);
+          border-radius: max(3px, 0.2vw);
           margin-bottom: max(15px, 1vw);
-          background: #F17913;
+          background: #f17913;
+        }
+
+        .hover-button {
+          background: #f17913;
+          svg {
+            font-size: max(15px, 1vw);
+            display: flex;
+            align-items: center;
+            margin-left: 8px;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+          }
+        }
+
+        .hover-button:before {
+          background: #e07314;
+        }
+
+        &:hover svg,
+        :focus svg,
+        :active svg {
+          -webkit-animation-name: hvr-icon-buzz;
+          animation-name: hvr-icon-buzz;
+          -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+          -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
         }
       }
     }
@@ -82,18 +111,30 @@
     width: 65.75%;
   }
 
-  @media(max-width: 1000px){
-    .item1{
+  @media (max-width: 1000px) {
+    .item1 {
       width: 48%;
     }
-    .item2{
+    .item2 {
       width: 100%;
     }
   }
 
-  @media(max-width: 600px){
-    .item1, .item2{
+  @media (max-width: 600px) {
+    .item1,
+    .item2 {
       width: 100%;
+      .top-item {
+        h6 {
+          text-align: center;
+        }
+        .line {
+          margin: 0 auto max(15px, 1vw);
+        }
+        .hover-button {
+          margin: 0 auto;
+        }
+      }
     }
   }
 }

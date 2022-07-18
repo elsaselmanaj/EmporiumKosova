@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import "./navbar.scss";
 import { FormattedMessage } from "react-intl";
 import ThemeSwitcher from "../Footer/ThemeSwitcher";
 import { BiHeart } from "react-icons/bi";
-import {MdShoppingCart} from 'react-icons/md'
-import MobileNav from '../MobileNav/MobileNav'
+import { MdShoppingCart } from "react-icons/md";
+import MobileNav from "../MobileNav/MobileNav";
+import { logout } from "../../../store/actions/userAction";
 
 const Navbar = (props) => {
   const [isSticky, setIsSticky] = useState(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const nav = document.querySelector(".nav");
@@ -24,6 +28,13 @@ const Navbar = (props) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  }
 
   return (
     <div
@@ -75,28 +86,38 @@ const Navbar = (props) => {
       </div>
 
       <div className="right-nav">
-        
-      <ThemeSwitcher />
+        <ThemeSwitcher />
 
         <div className="nav-icon heart">
           <BiHeart />
         </div>
 
-        <div className="nav-auth">
-          <Link to="/Login" className="link1">
-            <FormattedMessage id="log-in" defaultMessage="Log In" />
-          </Link>
-          <Link to="/Signup" className="link2">
-            <FormattedMessage id="sign-up" defaultMessage="Sign Up" />
-          </Link>
-        </div>
+        {userInfo ? (
+          <div className="nav-auth">
+            <Link to="/Profile" className="link1">
+              <FormattedMessage id="profile" defaultMessage="Profile" />
+            </Link>
+            <Link to="/Logout" className="link2" onClick={logoutHandler}>
+              <FormattedMessage id="logout" defaultMessage="Logout" />
+            </Link>
+          </div>
+        ) : (
+          <div className="nav-auth">
+            <Link to="/Login" className="link1">
+              <FormattedMessage id="log-in" defaultMessage="Log In" />
+            </Link>
+            <Link to="/Signup" className="link2">
+              <FormattedMessage id="sign-up" defaultMessage="Sign Up" />
+            </Link>
+          </div>
+        )}
 
         <div className="nav-icon cart">
           <MdShoppingCart />
         </div>
       </div>
 
-      <MobileNav /> 
+      <MobileNav />
     </div>
   );
 };

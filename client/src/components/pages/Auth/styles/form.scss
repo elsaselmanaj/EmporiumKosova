@@ -117,6 +117,7 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+        margin: min(-7px, -0.5vw) 0 max(20px, 1.65vw);
         a {
           color: #ec3625;
         }
@@ -133,6 +134,11 @@
           font-size: 16px;
         }
       }
+
+      button{
+        border: none;
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -143,6 +149,13 @@
       color: #f17913;
     }
   }
+
+  form button{
+    background-color: #EC3625;
+  }
+  form button:before{
+    background-color: #dd3122;
+  }
 }
 
 .signup-page .form-container {
@@ -150,6 +163,13 @@
     a {
       color: #ec3625;
     }
+  }
+
+  form button{
+    background-color: #F17913;
+  }
+  form button:before{
+    background-color: #e37413;
   }
 }
 

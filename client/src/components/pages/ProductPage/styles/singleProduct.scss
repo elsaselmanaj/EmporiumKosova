@@ -1,0 +1,42 @@
+.single-product-container {
+  margin: max(5%, 50px) 0;
+  padding: 0 7.5%;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+
+    .img-container {
+      .img {
+        content: url("../../../../assets/home/img6.webp");
+      }
+    }
+
+    .content {
+      h1 {
+        font-size: max(25px, 2vw);
+      }
+
+      p {
+        font-size: max(15px, 0.925vw);
+        margin: max(15px, 1.25vw) 0;
+      }
+
+      h5{
+        font-size: max(25px, 2vw);
+        margin-bottom: max(15px, 1.25vw);
+      }
+
+      .inline{
+        display: flex;
+        align-items: center;
+
+        h6{
+            font-size: max(15px, 0.925vw);
+        }
+
+        
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.profile-page .profile-container {
+  margin: max(100px, 10%) 0 max(50px, 5%);
+  padding: 0 7.5%;
+
+  .wrapper {
+    display: flex;
+
+    .user-card {
+      position: relative;
+      border: 1px solid red;
+      width: 30%;
+
+      .cover {
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        background-color: #F58F14;
+      }
+
+      .row {
+        position: relative;
+
+        .user-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            overflow: hidden;
+            border: 1px solid green;
+            margin: 8% auto 0;
+
+            .img-profile{
+                content: url('../../../../assets/profile/user-img.webp');
+                width: 120%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .details{
+            padding: max(13px, 1.5vw)0;
+
+            h5{text-align: center;}
+            p{text-align: center;}
+        }
+      }
+    }
+  }
+}
