@@ -2,47 +2,117 @@
   margin: max(100px, 10%) 0 max(50px, 5%);
   padding: 0 7.5%;
 
+  @media (max-width: 1200px) {
+    padding: 0 5.5%;
+  }
+
   .wrapper {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
 
     .user-card {
-      position: relative;
+      width: 28%;
+      height: 100%;
       border: 1px solid red;
-      width: 30%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
 
       .cover {
-        height: 100px;
-        width: 100%;
         position: absolute;
-        background-color: #F58F14;
+        width: 100%;
+        height: 150px;
+        top: 0;
+        border-radius: 4px 4px 0px 0px;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        background: linear-gradient(140deg, #f9ab4b, #fda576);
+        // z-index: 1;
       }
 
-      .row {
+      .img-container {
         position: relative;
-
-        .user-profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 100%;
-            overflow: hidden;
-            border: 1px solid green;
-            margin: 8% auto 0;
-
-            .img-profile{
-                content: url('../../../../assets/profile/user-img.webp');
-                width: 120%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-
-        .details{
-            padding: max(13px, 1.5vw)0;
-
-            h5{text-align: center;}
-            p{text-align: center;}
+        width: 28%;
+        padding-top: 28%;
+        border-radius: 50%;
+        background: #fff;
+        margin: 18% auto 0;
+        .inner-img {
+          width: 90%;
+          height: 90%;
+          position: absolute;
+          border-radius: 50%;
+          top: 5%;
+          left: 5%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #f1f1f1;
+          overflow: hidden;
+          .img {
+            width: 87.5%;
+            height: 87.5%;
+            border-radius: 50%;
+            background: url("../../../../assets/profile/user-img.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
         }
       }
+
+      .infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+
+        h5 {
+          font-size: max(13px, 1vw);
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: max(13px, 0.85vw);
+        }
+      }
+
+      .react-tabs__tab-list {
+        display: flex;
+        flex-direction: column;
+        .react-tabs__tab {
+          padding: 11px 22.5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ec3625;
+            color: #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: max(11px, 0.625vw);
+          }
+          cursor: pointer;
+          &:first-child {
+            border-top: 1px solid red;
+          }
+          &:nth-child(2) {
+            border-top: 1px solid red;
+          }
+        }
+      }
+    }
+
+    .panel {
+      width: 70%;
+      // border: 1px solid green;
     }
   }
 }

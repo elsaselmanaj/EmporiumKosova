@@ -4,10 +4,7 @@ import "./styles/productList.scss";
 import { FormattedMessage } from "react-intl";
 
 const ProductsList = () => {
-  const [dropdown1, setDropdown1] = useState(false);
-  const showDropdown1 = () => {
-    setDropdown1(!dropdown1);
-  };
+ 
 
   return (
     <div className="products-list-container">

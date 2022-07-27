@@ -7,12 +7,13 @@
     justify-content: space-between;
 
     .img-container {
-      .img {
-        content: url("../../../../assets/home/img6.webp");
-      }
+      border: 1px solid red;
+      width: 32.9%;
     }
 
     .content {
+      border: 1px solid red;
+      width: 60%;
       h1 {
         font-size: max(25px, 2vw);
       }
@@ -22,20 +23,134 @@
         margin: max(15px, 1.25vw) 0;
       }
 
-      h5{
+      h5 {
         font-size: max(25px, 2vw);
         margin-bottom: max(15px, 1.25vw);
       }
 
-      .inline{
+      .inline {
         display: flex;
         align-items: center;
-
-        h6{
-            font-size: max(15px, 0.925vw);
+        .reviews {
+          margin-right: 50px;
         }
 
-        
+        .status {
+          margin-right: 68px;
+        }
+
+        .size {
+          margin-right: 90px;
+        }
+
+        select {
+          margin-right: 95px;
+        }
+
+        h6 {
+          font-size: max(15px, 0.925vw);
+        }
+      }
+
+      .inline-bottom {
+        display: flex;
+        align-items: center;
+        margin-top: max(15px, 1.65vw);
+
+        select {
+          margin-right: 95px;
+        }
+
+        button {
+          background-color: #ec3625;
+          border: none;
+        }
+
+        button::before {
+          background-color: #d43122;
+        }
+      }
+    }
+  }
+
+  .reviews-container {
+    display: flex;
+    justify-content: space-between;
+    margin: max(20.5px, 4.5vw) 0;
+    
+
+    .left {
+      border: 1px solid red;
+      width: 37%;
+      flex-shrink: 0;
+      
+
+      h6 {
+        font-size: max(25px, 1.6vw);
+        margin-bottom: max(15px, 1.25vw);
+      }
+
+      .review-wrapper {
+        background-color: #ecedf2;
+        border-radius: 5px;
+        padding: max(12px, 1.2vw);
+
+        h5 {
+          font-size: max(20px, 0.9vw);
+        }
+
+        .stars {
+          margin: max(12px, 0.5vw) 0;
+        }
+
+        p {
+          margin-bottom: max(12px, 0.5vw);
+        }
+
+        .comment {
+          background-color: #fff;
+          padding: max(12px, 1.2vw);
+          border-radius: 5px;
+        }
+      }
+    }
+    .right {
+      border: 1px solid red;
+      width: 60%;
+      flex-shrink: 0;
+      h6 {
+        font-size: max(25px, 1.6vw);
+        margin-bottom: max(15px, 1.25vw);
+      }
+      h5 {
+        font-size: max(20px, 0.9vw);
+        margin-bottom: max(12px, 0.5vw);
+      }
+      .row1 {
+        margin: max(15px, 1.25vw) 0;
+
+        select {
+          flex: 0 0 auto;
+          width: 60%;
+          padding: max(12px, 0.5vw);
+        }
+
+        textarea {
+          flex: 0 0 auto;
+          width: 60%;
+          padding: max(12px, 0.5vw);
+        }
+      }
+
+      .row2{
+        button{
+          border: none;
+          background-color: #f17913;
+          margin: 0 0 0 22%;
+        }
+        button::before{
+          background: #e07314;
+        }
       }
     }
   }

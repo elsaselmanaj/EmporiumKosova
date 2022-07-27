@@ -17,6 +17,7 @@ import { IntlProvider } from "react-intl";
 import { translate } from "./translation/translate";
 import { useSelector } from "react-redux";
 
+
 const Home = lazy(() => import("./pages/Home/Home"));
 const Login = lazy (() => import("./pages/Login/Login"))
 const Signup = lazy (() => import("./pages/Signup/Signup"))
@@ -24,6 +25,10 @@ const Profile = lazy(() => import("./pages/Profile/Profile"))
 const ProductsCatalog = lazy (() => import("./pages/ProductsCatalog/ProductsCatalog"))
 const ProductPage = lazy (() => import("./pages/ProductPage/ProductPage"))
 const ShoppingCart = lazy (() => import("./pages/ShoppingCart/ShoppingCart"))
+const Shipping = lazy(() => import("./pages/Shipping/Shipping"))
+const Payment = lazy(() => import("./pages/Payment/Payment"))
+const PlaceOrder = lazy(() => import("./pages/PlaceOrder/PlaceOrder"))
+const Order = lazy(() => import("./pages/Order/Order"))
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"))
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"))
 const Blog = lazy(() => import("./pages/Blog/Blog"))
@@ -54,8 +59,12 @@ function App() {
             <Route path="/Signup" element={<Signup />}/>
             <Route path='/Profile' element={<Profile />}/>
             <Route path="/ProductsCatalog" element={<ProductsCatalog />}/>
-            <Route path="/ProductPage" element={<ProductPage />}/>
-            <Route path="/ShoppingCart" element={<ShoppingCart />}/>
+            <Route path="/ProductPage/:id" element={<ProductPage />}/>
+            <Route path="/ShoppingCart/:id" element={<ShoppingCart />}/>
+            <Route path="/Shipping" element={<Shipping />}/>
+            <Route path="/Payment" element={<Payment />}/>
+            <Route path="/PlaceOrder" element={<PlaceOrder />}/>
+            <Route path="/Order/:id" element={<Order />}/>
             <Route path="/AboutUs" element={<AboutUs />}/>
             <Route path="/ContactUs" element={<ContactUs />}/>
             <Route path="/Blog" element={<Blog />}/>

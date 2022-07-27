@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import ThemeSwitcher from "../../Footer/ThemeSwitcher";
@@ -14,6 +15,10 @@ import { BiHeart } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
 
 const Sidebar = (props) => {
+
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
   return (
     <div className="mobile-sidebar">
       <div className="sidebar-logo-row">
@@ -86,7 +91,8 @@ const Sidebar = (props) => {
         </div>
 
         <div className="sidebar-icon cart">
-          <MdShoppingCart />
+        <Link to='/ShoppingCart'><MdShoppingCart /></Link>
+          <span className="badge">{cartItems.length}</span>
         </div>
 
         <div className="space"></div>

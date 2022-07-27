@@ -15,6 +15,9 @@ const Navbar = (props) => {
 
   const dispatch = useDispatch();
 
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
   useEffect(() => {
     const nav = document.querySelector(".nav");
     const navHeight = nav.scrollHeight;
@@ -113,7 +116,8 @@ const Navbar = (props) => {
         )}
 
         <div className="nav-icon cart">
-          <MdShoppingCart />
+          <Link to='/ShoppingCart/:id'><MdShoppingCart /></Link>
+          <span className="badge">{cartItems.length}</span>
         </div>
       </div>
 

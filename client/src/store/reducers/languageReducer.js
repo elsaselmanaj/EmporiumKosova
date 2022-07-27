@@ -1,4 +1,4 @@
-import { CHOOSE_LANGUAGE } from '../actionTypes';
+import { CHOOSE_LANGUAGE } from '../constants/languageConstants';
 
 import { dataLocalStorage } from '../../components/shared/SelectLanguage/dataLocalStorage';
 

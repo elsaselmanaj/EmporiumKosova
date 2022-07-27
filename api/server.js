@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const ImportData = require("./DataImport")
 const productRoute = require("./routes/ProductRoute")
 const userRoute = require("./routes/UserRoute")
+const orderRoute = require("./routes/OrderRoute")
 const {errorHandler, notFound} = require("./middleware/Errors")
 
 
@@ -22,6 +23,10 @@ app.use(express.json());
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
 app.use("/api/users", userRoute);
+app.use("/api/orders", orderRoute);
+app.get("/api/config/paypal", (req,res) => {
+    res.send(process.env.PAYPAL_CLIENT_ID);
+});
 
 //ERROR HANDLER
 app.use(notFound);

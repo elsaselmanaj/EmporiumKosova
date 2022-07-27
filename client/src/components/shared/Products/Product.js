@@ -4,12 +4,13 @@ import { IoMdHeart } from "react-icons/io";
 import Rating from "./Rating";
 import "./product.scss";
 import { FormattedMessage } from "react-intl";
+import {Link} from 'react-router-dom'
 
-const Product = ({ item }) => {
+const Product = ({ product }) => {
   return (
     <div className="product-container">
       <div className="img-container">
-        <div className="img" style={{ content: `url(${item.img})` }}></div>
+        <div className="img" style={{ content: `url(${product.image})` }}></div>
         <span>
           <FormattedMessage id="new-arrivals-span" defaultMessage="NEW" />
         </span>
@@ -18,7 +19,9 @@ const Product = ({ item }) => {
             <MdShoppingCart />
           </div>
           <div className="icon">
+            <Link to={`/ProductPage/${product._id}`}>
             <MdRemoveRedEye />
+            </Link>
           </div>
           <div className="icon">
             <IoMdHeart />
@@ -27,9 +30,9 @@ const Product = ({ item }) => {
       </div>
 
       <div className="content">
-        <h5>{item.name}</h5>
-        <Rating value={item.rating} text={`${item.numReviews} reviews`} />
-        <p>{item.price} EUR</p>
+        <h5>{product.name}</h5>
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+        <p>{product.price} EUR</p>
       </div>
     </div>
   );

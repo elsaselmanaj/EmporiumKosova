@@ -119,6 +119,22 @@
       display: block !important;
     }
   }
+
+  a{display: flex; align-items: center; color: #000;}
+  .cart{position: relative;}
+  .badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ec3625;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: max(11px, 0.625vw);
+    position: absolute;
+    top: -12px;
+    right: -8px;
+  }
 }
 
 .mobile-sidebar::-webkit-scrollbar {

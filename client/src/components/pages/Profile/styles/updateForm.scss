@@ -1,0 +1,63 @@
+.profile-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+   // border: 1px solid red;
+  form {
+    width: 100% !important;
+
+    .input-content {
+      margin: 0 0 max(13.5px, 1vw) 0;
+      p {
+        font-size: max(12px, 0.9vw);
+        margin-bottom: 10px;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-transition: background-color 5000s ease-in-out 0s;
+        -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+        box-shadow: 0 0 0px 1000px #fff inset;
+        -webkit-text-fill-color: #888 !important;
+      }
+      .inner-input-content {
+        background: #fff;
+        align-items: center;
+        border: 1px solid #e2e2e2;
+        border-radius: 8px;
+        display: flex;
+        padding: 0 max(12px, 0.8vw);
+
+        &:focus-within {
+          span {
+            color: #f17913;
+          }
+        }
+
+        input {
+          background: #fff;
+          border: 0;
+          border-radius: 8px;
+          color: #888;
+          flex: 1 1;
+          font-size: max(12px, 0.725vw);
+          height: max(35px, 2.8vw);
+          padding: 0 max(3px, 0.2vw);
+        }
+      }
+    }
+    button {
+      border: none;
+      margin: 0 auto;
+      background-color: #168813;
+    }
+    button:before{
+        background-color: #157211;
+      }
+  }
+}
