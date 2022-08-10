@@ -16,7 +16,6 @@ const SingleProduct = () => {
   let { id } = useParams();
   let history = useNavigate();
   const dispatch = useDispatch();
-  const [size, setSize] = useState("");
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -94,20 +93,6 @@ const SingleProduct = () => {
 
           {product.countInStock > 0 ? (
             <>
-              <div className="inline">
-                <h6 className="size">
-                  <FormattedMessage id="size" defaultMessage="Size:" />
-                </h6>
-                <select
-                  name="size"
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                >
-                  {product.size?.map((s) => (
-                    <option key={s}>{s}</option>
-                  ))}
-                </select>
-              </div>
               <div className="inline-bottom">
                 <select
                   name="quantity"
@@ -138,7 +123,7 @@ const SingleProduct = () => {
               defaultMessage="Reviews"
             />
           </h6>
-          {product.reviews.length === 0 && <div>No reviews</div>}
+          {product.reviews.length === 0 && <div className="no-rw">No reviews</div>}
           {product.reviews.map((review) => (
             <div className="review-wrapper" key={review._id}>
               <h5>{review.name}</h5>

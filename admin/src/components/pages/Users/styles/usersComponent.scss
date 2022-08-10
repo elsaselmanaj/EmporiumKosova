@@ -1,0 +1,25 @@
+.users-page{overflow: hidden;}
+
+.users-page{
+    .users-component-container{
+        padding: 30px 3%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .wrapper{
+            border: 1px solid red;
+            
+
+            .cards{
+                border: 1px solid red;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .card{
+                    border: 1px solid red;
+                }
+            }
+        }
+    }
+}

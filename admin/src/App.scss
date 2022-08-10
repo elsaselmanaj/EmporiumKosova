@@ -1,0 +1,73 @@
+body.aside-mini .navbar-aside {
+  max-width: 70px;
+  overflow: visible;
+  position: absolute;
+  min-height: 100%;
+  bottom: auto;
+}
+
+body.aside-mini .navbar-aside .aside-top {
+    text-align: center;
+}
+
+body.aside-mini .navbar-aside .aside-top > div {
+    flex-grow: 1;
+}
+
+body.aside-mini .navbar-aside .logo,
+body.aside-mini .navbar-aside .logo-container {
+  display: none;
+}
+
+.main-wrap{
+  margin-left: 260px;
+  background-color: #f8f9fa; 
+}
+
+.hover-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: fit-content;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: #d11897;
+  color: #fff;
+  font-size: max(15px, 0.95vw);
+  padding: max(10px, 0.75vw) max(25px, 2vw);
+  border-radius: max(22px, 2vw);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hover-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c2178c;
+  border-radius: max(22px, 2vw);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hover-button:hover:before,
+.hover-button:focus:before,
+.hover-button:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

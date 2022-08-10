@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./styles/placeAnOrder.scss";
+import {FormattedMessage} from 'react-intl'
 import { FaUserAlt, FaTruck, FaMapMarkerAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -53,39 +54,39 @@ const PlaceAnOrder = () => {
   return (
     <div className="place-an-order-container">
       <div className="top">
-        <div className="row">
+        <div className="row row1">
           <div className="circle">
             <FaUserAlt />
           </div>
 
           <div className="info">
-            <h6>Customer</h6>
-            <p>{userInfo.name}</p>
+            <h6><FormattedMessage id="place-order-customer"/></h6>
+            <p>{userInfo.name}</p> 
             <p>{userInfo.email}</p>
           </div>
         </div>
 
-        <div className="row">
+        <div className="row row2">
           <div className="circle">
             <FaTruck />
           </div>
 
           <div className="info">
-            <h6>Order Info</h6>
-            <p>Shipping: {cart.shippingAddress.country}</p>
-            <p>Payment method: {cart.paymentMethod}</p>
+            <h6><FormattedMessage id="place-order-info"/></h6>
+            <p><FormattedMessage id="place-order-shipping"/> {cart.shippingAddress.country}</p>
+            <p><FormattedMessage id="place-order-payment-method"/> {cart.paymentMethod}</p>
           </div>
         </div>
 
-        <div className="row">
+        <div className="row row3">
           <div className="circle">
             <FaMapMarkerAlt />
           </div>
 
           <div className="info">
-            <h6>Deliver to</h6>
+            <h6><FormattedMessage id="place-order-deliver"/></h6>
             <p>
-              Address: {cart.shippingAddress.city},{" "}
+              <FormattedMessage id="place-order-address"/> {cart.shippingAddress.city},{" "}
               {cart.shippingAddress.address}, {cart.shippingAddress.postalCode}
             </p>
           </div>
@@ -107,18 +108,19 @@ const PlaceAnOrder = () => {
                 </div>
 
                 <div className="info">
+                <h5><FormattedMessage id="shopping-cart-product"/></h5>
                   <Link to={`/ProductPage/${item.product}`}>
-                    <h5>{item.name}</h5>
+                    <p>{item.name}</p>
                   </Link>
                 </div>
 
                 <div className="info">
-                  <h5>Quantity</h5>
+                  <h5><FormattedMessage id="shopping-cart-quantity"/></h5>
                   <p>{item.qty}</p>
                 </div>
 
                 <div className="info">
-                  <h5>Subtotal</h5>
+                  <h5><FormattedMessage id="place-order-subtotal"/></h5>
                   <p>{item.qty * item.price} EUR</p>
                 </div>
               </div>
@@ -129,19 +131,19 @@ const PlaceAnOrder = () => {
         <div className="table-container">
           <div className="table">
             <div className="line">
-              <h5>Product:</h5>
+              <h5><FormattedMessage id="shopping-cart-product"/></h5>
               <p>{cart.itemsPrice} EUR</p>
             </div>
             <div className="line">
-              <h5>Estimated Shipping:</h5>
+              <h5><FormattedMessage id="place-order-shipping-est"/></h5>
               <p>4.50 EUR</p>
             </div>
             <div className="line">
-              <h5>Shipping Discount:</h5>
+              <h5><FormattedMessage id="place-order-shipping-dsc"/></h5>
               <p>-4.50 EUR</p>
             </div>
             <div className="line">
-              <h5>Total:</h5>
+              <h5><FormattedMessage id="shopping-cart-total"/></h5>
               <p>{cart.totalPrice} EUR</p>
             </div>
           </div>
@@ -151,7 +153,7 @@ const PlaceAnOrder = () => {
               onClick={placeOrderHandler} 
               className="hover-button"
             >
-              Place Order
+              <FormattedMessage id="place-order-link"/>
             </button>
           )}{" "}
           

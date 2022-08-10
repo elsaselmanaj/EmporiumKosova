@@ -22,17 +22,16 @@
     width: 22%;
 
     &:first-child,
-    &:nth-child(3)
-    {
-      .block h6{
-        color: #EC3625;
+    &:nth-child(3) {
+      .block h6 {
+        color: #ec3625;
       }
     }
 
     &:nth-child(2),
-    &:nth-child(4){
-      .block h6{
-        color: #F17913;
+    &:nth-child(4) {
+      .block h6 {
+        color: #f17913;
       }
     }
 
@@ -63,6 +62,22 @@
 
     @media (max-width: 400px) {
       width: 65%;
+    }
+  }
+}
+
+body.dark-mode {
+  .home-page .info-container {
+    .item {
+      .icon {
+        -webkit-filter: brightness(0) invert(1);
+        filter: brightness(0) invert(1);
+      }
+      .block {
+        p {
+          color: #fff;
+        }
+      }
     }
   }
 }

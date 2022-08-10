@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./styles/profile.scss";
+import {FormattedMessage} from 'react-intl'
 import { TabList, TabPanel, Tab, Tabs } from "react-tabs";
 import ProfileTabs from "./ProfileTabs";
 import UserOrders from "./UserOrders"
@@ -35,12 +36,12 @@ const Profile = () => {
           </div>
           <div className="infos">
             <h5>{userInfo.name}</h5>
-            <p>Joined: {moment(userInfo.createdAt).format("LL")} </p>
+            <p><FormattedMessage id="profile-joined"/> {moment(userInfo.createdAt).format("LL")} </p>
           </div>
 
           <TabList>
-            <Tab>Profile Settings</Tab>
-            <Tab>Orders <span className="badge">{orders ? orders.length : 0}</span></Tab>
+            <Tab><FormattedMessage id="profile-settings"/></Tab>
+            <Tab><FormattedMessage id="profile-orders"/> <span className="badge">{orders ? orders.length : 0}</span></Tab>
           </TabList>
         </div>
 

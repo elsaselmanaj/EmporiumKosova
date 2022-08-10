@@ -46,3 +46,18 @@
     }
     
 }
+
+body.dark-mode{
+    .mobile-toolbar{
+        background-color: #171717 !important;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+        .mobile-logo-row a{
+            .mobile-logo-container{
+                content: url('../../../../assets/nav/nav-white-logo.png');
+            }
+        }
+        button{
+            color: #fff;
+        }
+    }
+}

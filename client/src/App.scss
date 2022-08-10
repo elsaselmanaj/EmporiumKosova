@@ -9,23 +9,28 @@
   outline: none;
 }
 
-html{
+html {
   height: 100%;
 }
 
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 500;
 }
 
 body::-webkit-scrollbar {
   width: 12px;
-  @media(max-width:1431px){
+  @media (max-width: 1431px) {
     width: 8px;
   }
 }
@@ -41,19 +46,19 @@ body.dark-mode::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   // background-color:  #101010;
-  background-color:  #EB8341;
+  background-color: #eb8341;
   border-radius: 1px;
 }
 
 body.dark-mode::-webkit-scrollbar-thumb {
-  background-color:  #a05628;
+  background-color: #a05628;
 }
 
-.rec-swipable{
+.rec-swipable {
   align-items: stretch;
 }
-.rec-carousel-item-visible{
-  margin:0;
+.rec-carousel-item-visible {
+  margin: 0;
   display: flex;
 }
 
@@ -124,9 +129,18 @@ body.dark-mode::-webkit-scrollbar-thumb {
   transform: scaleX(1);
 }
 
-body.dark-mode{
+body.dark-mode {
   background: #171717;
   background-repeat: repeat-y;
   background-attachment: fixed;
-}
 
+  .rec-arrow,
+  .rec-arrow-left,
+  .rec-arrow-right {
+    backdrop-filter: blur(max(10px, 0.75vw));
+    -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+    background: hsla(0, 0%, 100%, 0.15) !important;
+    color: #fff !important;
+    border: 1px solid transparent !important;
+  }
+}

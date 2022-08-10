@@ -135,7 +135,7 @@
         }
       }
 
-      button{
+      button {
         border: none;
         margin: 0 auto;
       }
@@ -150,10 +150,10 @@
     }
   }
 
-  form button{
-    background-color: #EC3625;
+  form button {
+    background-color: #ec3625;
   }
-  form button:before{
+  form button:before {
     background-color: #dd3122;
   }
 }
@@ -165,10 +165,10 @@
     }
   }
 
-  form button{
-    background-color: #F17913;
+  form button {
+    background-color: #f17913;
   }
-  form button:before{
+  form button:before {
     background-color: #e37413;
   }
 }
@@ -183,5 +183,35 @@
   to {
     -webkit-transform: scale(0.9);
     transform: scale(0.9);
+  }
+}
+
+body.dark-mode {
+  .login-page,
+  .signup-page {
+    .form-container form {
+      h1,
+      p {
+        color: #fff;
+      }
+      .input-content .inner-input-content {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        color: #fff;
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+        border: 1px solid transparent;
+        input{
+          background: none;
+        }
+      }
+
+      .remember-me-row,
+      .agree-terms-row
+      {
+        color: #fff;
+      }
+    }
   }
 }

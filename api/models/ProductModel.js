@@ -35,16 +35,6 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     reduired: true,
   },
-  category: {
-    type: String,
-    
-  },
-  size: {
-    type: Array,
-  },
-  color: {
-    type: Array,
-  },
   reviews: [reviewSchema],
   rating: {
     type: Number,

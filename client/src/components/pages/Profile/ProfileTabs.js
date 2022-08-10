@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './styles/updateForm.scss'
+import { FormattedMessage } from "react-intl";
 import {updateUserProfile} from '../../../store/actions/userAction'
 
 const ProfileTabs = () => {
@@ -36,7 +37,7 @@ const ProfileTabs = () => {
     <div className="profile-details-container">
       <form onSubmit={submitHandler}>
         <div className="input-content">
-        <p>Username</p>
+        <p><FormattedMessage id="profile-username"/></p>
           <div className="inner-input-content">
             <input
               type="name"
@@ -49,7 +50,7 @@ const ProfileTabs = () => {
         </div>
 
         <div className="input-content">
-        <p>Email Address</p>
+        <p><FormattedMessage id="profile-email-address"/></p>
           <div className="inner-input-content">
             <input
               type="email"
@@ -62,7 +63,7 @@ const ProfileTabs = () => {
         </div>
 
         <div className="input-content">
-        <p>New Password</p>
+        <p><FormattedMessage id="profile-new-pwd"/></p>
           <div className="inner-input-content">
             <input
               type="password"
@@ -75,7 +76,7 @@ const ProfileTabs = () => {
         </div>
 
         <div className="input-content">
-        <p>Confirm Password</p>
+        <p><FormattedMessage id="profile-confirm-pwd"/></p>
           <div className="inner-input-content">
             <input
               type="password"

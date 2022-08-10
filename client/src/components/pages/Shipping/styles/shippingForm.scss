@@ -1,6 +1,6 @@
 .shipping-page {
   overflow: hidden;
-  background: #f17b1312;
+  background: #dce0e7;
   
   .nav{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
@@ -84,6 +84,35 @@
       button::before{
         background: #e07314;
       }
+  }
+}
+
+body.dark-mode{
+  .shipping-page{
+    background: #191919 !important;
+    .shipping-form-container{
+      form{
+      backdrop-filter: blur(max(10px, 0.75vw));
+      -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+      background: hsla(0, 0%, 100%, 0.15);
+      color: #fff;
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+      border: 1px solid transparent;
+      .input-content .inner-input-content{
+      backdrop-filter: blur(max(10px, 0.75vw));
+      -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+      background: hsla(0, 0%, 100%, 0.15);
+      color: #fff;
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+      border: 1px solid transparent;
+      //border: 1px solid transparent;
+      input{background: none; color: #fff;}
+      input::placeholder{color: #fff;}
+      }
+      }
+    }
   }
 }
 

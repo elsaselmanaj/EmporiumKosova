@@ -92,3 +92,11 @@
         }
       }
 }
+
+body.dark-mode{
+  .products-container .product-container{
+    .content{
+      color: #fff;
+    }
+  }
+}

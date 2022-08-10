@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/userOrders.scss";
+import {FormattedMessage} from 'react-intl'
 import { Link } from "react-router-dom";
 import moment from "moment";
 import Loading from "../../shared/Loading/Loading";
@@ -24,39 +25,39 @@ const UserOrders = (props) => {
             </div>
           ) : (
             <div className="table-container">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>STATUS</th>
-                    <th>DATE</th>
-                    <th>TOTAL</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <div className="table">
+                <div className="table-header">
+                  <h5 className="title title1">ID</h5>
+                  <h5 className="title title2"><FormattedMessage id="user-orders-status"/></h5>
+                  <h5 className="title title3"><FormattedMessage id="user-orders-date"/></h5>
+                  <h5 className="title title4"><FormattedMessage id="user-orders-total"/></h5>
+                </div>
+                <div className="table-body">
                   {orders.map((order) => (
-                    <tr
+                    <div
                       className={`${
-                        order.isPaid ? "alert-success" : "alert-danger"
+                        order.isPaid ? "data" : "data"
                       }`}
                       key={order._id}
                     >
-                      <td>
+                      <div className="id">
                         <a href={`/Order/${order._id}`} className="link">
                           {order._id}
                         </a>
-                      </td>
-                      <td>{order.isPaid ? <>Paid</> : <>Not Paid</>}</td>
-                      <td>
+                      </div>
+                      <div className="status">
+                        {order.isPaid ? <p className="success"><FormattedMessage id="user-orders-paid"/></p> : <p className="danger"><FormattedMessage id="user-orders-not-paid"/></p>}
+                      </div>
+                      <div className="date">
                         {order.isPaid
                           ? moment(order.paidAt).calendar()
                           : moment(order.createdAt).calendar()}
-                      </td>
-                      <td>${order.totalPrice}</td>
-                    </tr>
+                      </div>
+                      <div className="total">{order.totalPrice} EUR</div>
+                    </div>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
             </div>
           )}
         </>

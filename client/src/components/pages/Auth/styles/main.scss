@@ -20,3 +20,13 @@
 .signup-page .main-component{
     background-image: url('../../../../assets/Auth/signup-bg.webp');
 }
+
+body.dark-mode{
+    .login-page,
+    .signup-page{
+        .main-component{
+            background-image: none;
+            background: #191919;
+        }
+    }
+}

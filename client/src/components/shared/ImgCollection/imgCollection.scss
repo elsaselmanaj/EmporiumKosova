@@ -138,3 +138,9 @@
     }
   }
 }
+
+body.dark-mode{
+  .img-collection-container .items .item{
+    border: 1px solid transparent !important;
+}
+}

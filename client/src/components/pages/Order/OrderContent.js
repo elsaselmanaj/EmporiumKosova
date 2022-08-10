@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/orderContent.scss";
+import { FormattedMessage } from "react-intl";
 import { FaUserAlt, FaTruck, FaMapMarkerAlt } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { PayPalButton } from "react-paypal-button-v2";
@@ -73,7 +74,7 @@ const OrderContent = () => {
               </div>
 
               <div className="info">
-                <h6>Customer</h6>
+              <h6><FormattedMessage id="place-order-customer"/></h6>
                 <p>{order.user.name}</p>
                 <p>
                   <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
@@ -87,17 +88,13 @@ const OrderContent = () => {
               </div>
 
               <div className="info">
-                <h6>Order Info</h6>
-                <p>Shipping: {order.shippingAddress.country} </p>
-                <p>Payment method: {order.paymentMethod}</p>
+              <h6><FormattedMessage id="place-order-info"/></h6>
+                <p><FormattedMessage id="place-order-shipping"/> {order.shippingAddress.country} </p>
+                <p><FormattedMessage id="place-order-payment-method"/> {order.paymentMethod}</p>
                 {order.isPaid ? (
-                  <div className="blue-box">
-                    <p>Paid on {moment(order.paidAt).calendar()}</p>
-                  </div>
+                    <p className="success">Paid on {moment(order.paidAt).calendar()}</p>
                 ) : (
-                  <div className="red-box">
-                    <p>Not Paid</p>
-                  </div>
+                    <p className="danger">Not Paid</p>
                 )}
               </div>
             </div>
@@ -108,20 +105,16 @@ const OrderContent = () => {
               </div>
 
               <div className="info">
-                <h6>Deliver to</h6>
+              <h6><FormattedMessage id="place-order-deliver"/></h6>
                 <p>
-                  Address: {order.shippingAddress.city},{" "}
+                <FormattedMessage id="place-order-address"/> {order.shippingAddress.city},{" "}
                   {order.shippingAddress.address},{" "}
                   {order.shippingAddress.postalCode}
                 </p>
                 {order.isDelivered ? (
-                  <div className="blue-box">
-                    <p>Delivered on {moment(order.deliveredAt).calendar()}</p>
-                  </div>
+                    <p className="success">Delivered on {moment(order.deliveredAt).calendar()}</p>
                 ) : (
-                  <div className="red-box">
-                    <p>Not Delivered</p>
-                  </div>
+                    <p className="danger">Not Delivered</p>
                 )}
               </div>
             </div>
@@ -145,18 +138,19 @@ const OrderContent = () => {
                       </div>
 
                       <div className="info">
+                      <h5><FormattedMessage id="shopping-cart-product"/></h5>
                         <Link to={`/ProductPage/${item.product}`}>
                           <h5>{item.name}</h5>
                         </Link>
                       </div>
 
                       <div className="info">
-                        <h5>Quantity</h5>
+                      <h5><FormattedMessage id="shopping-cart-quantity"/></h5>
                         <p>{item.qty}</p>
                       </div>
 
                       <div className="info">
-                        <h5>Subtotal</h5>
+                      <h5><FormattedMessage id="place-order-subtotal"/></h5>
                         <p>{item.qty * item.price} EUR</p>
                       </div>
                     </div>
@@ -168,20 +162,20 @@ const OrderContent = () => {
             <div className="table-container">
               <div className="table">
                 <div className="line">
-                  <h5>Product:</h5>
+                <h5><FormattedMessage id="shopping-cart-product"/></h5>
                   <p>{order.itemsPrice} EUR</p>
                 </div>
                 <div className="line">
-                  <h5>Shipping:</h5>
+                  <h5><FormattedMessage id="place-order-shipping"/></h5>
                   <p>0.00 EUR</p>
                 </div>
                 <div className="line">
-                  <h5>Total:</h5>
+                  <h5><FormattedMessage id="shopping-cart-total"/></h5>
                   <p>{order.totalPrice} EUR</p>
                 </div>
               </div>
               {!order.isPaid && (
-                <div className="">
+                <div className="payment-button">
                   {loadingPay && <Loading />}
                   {!sdkReady ? (
                     <Loading />

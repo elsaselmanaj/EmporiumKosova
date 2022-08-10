@@ -1,0 +1,70 @@
+div {
+  aside {
+   // border: 1px solid red;
+    width: 100%;
+    max-width: 260px;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 0.1rem 0.25rem rgb(0 0 0 / 8%);
+    z-index: 10;
+    border-right: 1px solid rgba(108,117,125,.25);
+
+    .aside-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 7.5% 10px;
+      a {
+        display: flex;
+        align-items: center;
+        .logo-container {
+          content: url("../../../assets/aside/admin-logo.webp");
+          height: max(35px, 2.75vw);
+        }
+      }
+
+      button {
+        border: 0;
+        background-color: transparent;
+        font-size: 30px;
+        cursor: pointer;
+        color: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .sidebar-links-container {
+        position: relative;
+      .sidebar-link {
+     //   border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        a {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          width: 160px;
+          svg {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #95989A;
+          }
+
+          h5{
+            font-size: 16.5px;
+            color: #000;
+          }
+
+          
+        }
+      }
+    }
+  }
+}

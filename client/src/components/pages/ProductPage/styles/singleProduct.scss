@@ -2,18 +2,61 @@
   margin: max(5%, 50px) 0;
   padding: 0 7.5%;
 
+  @media (max-width: 1200px) {
+    padding: 0 5.5%;
+  }
+
   .row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .img-container {
-      border: 1px solid red;
+      // border: 1px solid red;
       width: 32.9%;
+      overflow: hidden;
+      clip-path: polygon(11% 0, 100% 1%, 100% 85%, 89% 100%, 0 100%, 0 15%);
+      background: #dce0e7;
+      padding: max(10px, 1vw);
+      .img {
+        width: 100%;
+        clip-path: polygon(11% 0, 100% 1%, 100% 85%, 89% 100%, 0 100%, 0 15%);
+        transition: 0.35s ease-in-out;
+        -webkit-transition: 0.35s ease-in-out;
+      }
+      @media (max-width: 1000px) {
+        width: 40%;
+      }
+      @media (max-width: 800px) {
+        margin-bottom: max(18px, 1.55vw);
+        width: 70%;
+      }
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+      &:hover .img {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+      }
     }
 
     .content {
-      border: 1px solid red;
+      // border: 1px solid red;
       width: 60%;
+
+      @media (max-width: 1000px) {
+        width: 55%;
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+
       h1 {
         font-size: max(25px, 2vw);
       }
@@ -38,15 +81,6 @@
         .status {
           margin-right: 68px;
         }
-
-        .size {
-          margin-right: 90px;
-        }
-
-        select {
-          margin-right: 95px;
-        }
-
         h6 {
           font-size: max(15px, 0.925vw);
         }
@@ -59,6 +93,16 @@
 
         select {
           margin-right: 95px;
+          width: 100px;
+          height: 40px;
+          text-align: center;
+          border: 0;
+          border-radius: 5px;
+          background-color: #ecedf2;
+          font-size: max(15px, 0.925vw);
+          option {
+            background-color: #ecedf2;
+          }
         }
 
         button {
@@ -76,14 +120,34 @@
   .reviews-container {
     display: flex;
     justify-content: space-between;
-    margin: max(20.5px, 4.5vw) 0;
-    
+    flex-wrap: wrap;
+    margin: max(40.5px, 4.5vw) 0;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
 
     .left {
-      border: 1px solid red;
-      width: 37%;
+      //  border: 1px solid red;
+      width: 32.9%;
       flex-shrink: 0;
-      
+      .no-rw{
+        font-size: max(20px, 0.9vw);
+      }
+
+      @media (max-width: 1000px) {
+        width: 40%;
+      }
+      @media (max-width: 800px) {
+        margin-bottom: max(18px, 1.55vw);
+        width: 70%;
+        h6 {
+          text-align: center;
+        }
+      }
+      @media (max-width: 800px) {
+        width: 100%;
+      }
 
       h6 {
         font-size: max(25px, 1.6vw);
@@ -115,9 +179,34 @@
       }
     }
     .right {
-      border: 1px solid red;
+      //  border: 1px solid red;
       width: 60%;
       flex-shrink: 0;
+
+      @media (max-width: 1000px) {
+        width: 55%;
+      }
+
+      @media (max-width: 800px) {
+        width: 100%;
+        h6 {
+          text-align: center;
+        }
+        .row1 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          select,
+          textarea {
+            width: 100% !important;
+          }
+        }
+        .row2 {
+          button {
+            margin: 0 auto !important;
+          }
+        }
+      }
       h6 {
         font-size: max(25px, 1.6vw);
         margin-bottom: max(15px, 1.25vw);
@@ -133,23 +222,118 @@
           flex: 0 0 auto;
           width: 60%;
           padding: max(12px, 0.5vw);
+          background-color: #ecedf2;
+          font-size: max(15px, 0.925vw);
+          border: none;
+          border-radius: 5px;
+          option {
+            background-color: #ecedf2;
+          }
         }
 
         textarea {
           flex: 0 0 auto;
           width: 60%;
           padding: max(12px, 0.5vw);
+          background-color: #ecedf2;
+          font-size: max(15px, 0.925vw);
+          border: none;
+          border-radius: 5px;
         }
       }
 
-      .row2{
-        button{
+      .row2 {
+        button {
           border: none;
           background-color: #f17913;
           margin: 0 0 0 22%;
         }
-        button::before{
+        button::before {
           background: #e07314;
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .single-product-container {
+    .row {
+      .img-container {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+      }
+      .content {
+        color: #fff;
+        .inline-bottom {
+          select {
+            backdrop-filter: blur(max(10px, 0.75vw));
+            -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+            background: hsla(0, 0%, 100%, 0.15);
+            color: #fff;
+            transition: 0.4s ease-in-out;
+            -webkit-transition: 0.4s ease-in-out;
+            option {
+              color: #fff;
+              background-color: #3a3a3a;
+            }
+          }
+        }
+      }
+    }
+
+    .reviews-container {
+      .left {
+        h6 {
+          color: #fff;
+        }
+
+        .no-rw{
+          color: #fff;
+        }
+        .review-wrapper {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          color: #fff;
+          transition: 0.4s ease-in-out;
+          -webkit-transition: 0.4s ease-in-out;
+          .comment {
+            backdrop-filter: blur(max(10px, 0.75vw));
+            -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+            background: hsla(0, 0%, 100%, 0.15);
+            color: #000;
+            transition: 0.4s ease-in-out;
+            -webkit-transition: 0.4s ease-in-out;
+          }
+        }
+      }
+
+      .right {
+        h6,
+        h5 {
+          color: #fff;
+        }
+        .row1 {
+          select,
+          textarea {
+            backdrop-filter: blur(max(10px, 0.75vw));
+            -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+            background: hsla(0, 0%, 100%, 0.15);
+           color: #fff;
+            transition: 0.4s ease-in-out;
+            -webkit-transition: 0.4s ease-in-out;
+          }
+
+          select{
+            option {
+              color: #fff;
+              background-color: #3a3a3a;
+            }
+          }
         }
       }
     }

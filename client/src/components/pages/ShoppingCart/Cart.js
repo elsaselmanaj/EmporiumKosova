@@ -39,9 +39,9 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <div className="top">
             <div className="empty">
-              Your Cart is Empty
+              <FormattedMessage id="shopping-cart-empty-text"/>
               <Link to="/ProductsCatalog" className="hover-button">
-                Shop Now <MdOutlineKeyboardArrowRight />
+                <FormattedMessage id="shop-now"/> <MdOutlineKeyboardArrowRight />
               </Link>
             </div>
           </div>
@@ -49,10 +49,10 @@ const Cart = () => {
           <>
             <div className="top">
               <div className="cart-products-nr">
-                Shopping Cart
+                <FormattedMessage id="shopping-cart-nr"/>
                 <Link to="/ShoppingCart">({cartItems.length})</Link>
               </div>
-              <div className="wishlist">Wishlist (0)</div>
+              <div className="wishlist"><FormattedMessage id="wishlist"/> (0)</div>
             </div>
 
             {cartItems.map((item) => (
@@ -69,21 +69,15 @@ const Cart = () => {
 
                 <div className="infos">
                   <div className="inline">
-                    <h5>Product:</h5>
+                    <h5><FormattedMessage id="shopping-cart-product"/></h5>
                     <Link to={`/ProductPage/${item.product}`}>
                       <p>{item.name}</p>
                     </Link>
                   </div>
                 </div>
 
-                <div className="size">
-                  <div className="inline">
-                    <h5>Size:</h5>
-                  </div>
-                </div>
-
                 <div className="quantity">
-                  <h5>Quantity:</h5>
+                  <h5><FormattedMessage id="shopping-cart-quantity"/></h5>
                   <select
                     value={item.qty}
                     onChange={(e) =>
@@ -99,14 +93,14 @@ const Cart = () => {
                 </div>
 
                 <div className="subtotal">
-                  <h5>Price:</h5>
-                  <p>{item.price}</p>
+                  <h5><FormattedMessage id="shopping-cart-price"/></h5>
+                  <p>{item.price} EUR</p>
                 </div>
               </div>
             ))}
 
             <div className="total">
-              <h5>Total:</h5>
+              <h5><FormattedMessage id="shopping-cart-total"/></h5>
               <h6>{total} EUR</h6>
             </div>
 
@@ -115,7 +109,7 @@ const Cart = () => {
             <div className="bottom">
               <Link to="/ProductsCatalog" className="hover-button">
                 <FormattedMessage
-                  id="continue-shopping"
+                  id="shopping-cart-continue-shopping"
                   defaultMessage="Continue Shopping"
                 />
                 <MdOutlineKeyboardArrowRight />
@@ -124,7 +118,7 @@ const Cart = () => {
               {total > 0 && (
                 <button onClick={checkOutHandler} className="hover-button">
                   <FormattedMessage
-                    id="checkout-now"
+                    id="shopping-cart-checkout-now"
                     defaultMessage="Checkout Now"
                   />
                   <MdOutlineKeyboardArrowRight />

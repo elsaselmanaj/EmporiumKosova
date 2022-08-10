@@ -64,6 +64,11 @@
           // background-color: #e9f5f5;
           transform: scale(1.1);
         }
+
+        a{
+          display: flex;
+          align-items: center;
+        }
       }
 
       a{color: #fff;}

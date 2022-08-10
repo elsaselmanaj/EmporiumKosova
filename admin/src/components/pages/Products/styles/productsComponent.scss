@@ -1,0 +1,96 @@
+.products-page {
+  overflow: hidden;
+}
+
+.products-page {
+  .products-component-container {
+    padding: 30px 3%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .wrapper {
+      border: 1px solid red;
+
+      .table {
+        overflow: hidden;
+
+        .table-header {
+          display: flex;
+        //  justify-content: space-between;
+          align-items: center;
+          // padding: max(10px, 1vw) max(15px, 1.5vw);
+        //  border: 1px solid red;
+          padding: 0 max(10px, 1vw);
+
+          .title1{
+            width: 35%;
+          }
+
+          .title2{
+            width: 50%;
+          }
+
+          .title3{
+            width: 25%;
+          }
+
+          .title4{
+            width: 30%;
+          }
+
+          .title5{
+            width: 5%;
+          }
+        }
+
+        .table-body {
+            padding: 0 max(10px, 1vw);
+          .data {
+            display: flex;
+            align-items: center;
+           // justify-content: space-between;
+
+            .id{
+            //    border: 1px solid red;
+                width: 35%;
+            }
+
+            .product{
+              //  border: 1px solid red;
+                width: 50%;
+            }
+
+            .stock{
+                width: 25%;
+            }
+
+            .price{
+                width: 30%;
+            }
+
+            .action{
+                display: flex;
+                align-items: center;
+                a{
+                    text-decoration: none;
+                    margin-right: max(7.5px,0.6vw);
+                    color: #168813;
+                }
+                .badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #ec3625;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    font-size: max(11px, 0.625vw);
+                    color: #fff;
+                  }
+            }
+          }
+        }
+      }
+    }
+  }
+}

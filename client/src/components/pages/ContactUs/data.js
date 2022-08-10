@@ -19,7 +19,7 @@ export const FAQdata = [
     },
     {
         title: <FormattedMessage id='faq-title5' defaultMessage="Shipping Policy"/>,
-        answer: <FormattedMessage id='faq-answer5' defaultMessage="The shipping costs will be covered by EmporiumKosova.We also offer worldwide shipping. "/>
+        answer: <FormattedMessage id='faq-answer5' defaultMessage="The shipping costs will be covered by EmporiumKosova.We also offer worldwide shipping."/>
     },
     {
         title: <FormattedMessage id='faq-title6' defaultMessage="Privacy Policy"/>,

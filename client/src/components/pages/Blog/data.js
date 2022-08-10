@@ -67,7 +67,7 @@ export const Data1 = [
 export const Data2 = [
     {
         image: img5,
-        title: <FormattedMessage id='articles-title5' defaultMessage="The latest trends for summer 2022"/>,
+        title: <FormattedMessage id='articles-title2' defaultMessage="The latest trends for summer 2022"/>,
         profile: profile5,
         user: 'Eva Rodrigo',
         date: '27.06.2022',
@@ -75,7 +75,7 @@ export const Data2 = [
     },
     {
         image: img6,
-        title: <FormattedMessage id='articles-title6' defaultMessage="Top 10 June Best-Sellers Products"/>,
+        title: <FormattedMessage id='articles-title5' defaultMessage="Top 10 June Best-Sellers Products"/>,
         profile: profile6,
         user: 'Hannah West',
         date: '15.06.2022',
@@ -83,7 +83,7 @@ export const Data2 = [
     },
     {
         image: img7,
-        title: <FormattedMessage id='articles-title7' defaultMessage="Fashion Inspiration"/>,
+        title: <FormattedMessage id='articles-title6' defaultMessage="Fashion Inspiration"/>,
         profile: profile7,
         user: 'Jess Miller',
         date: '11.06.2022',

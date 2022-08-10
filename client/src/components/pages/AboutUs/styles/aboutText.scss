@@ -63,3 +63,22 @@
     }
   }
 }
+
+
+body.dark-mode{
+  .about-us-page .about-text-container{
+    .left{
+      backdrop-filter: blur(max(10px, 0.75vw));
+      -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+      background: hsla(0, 0%, 100%, 0.15);
+      //  color: #fff;
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+    }
+    .right{
+      h1,p{
+        color: #fff;
+      }
+    }
+  }
+}

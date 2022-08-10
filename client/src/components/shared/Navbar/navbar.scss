@@ -166,3 +166,40 @@
     }
   }
 }
+
+body.dark-mode{
+  .nav{
+    background-color: #171717;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 5px 0px;
+    .nav-logo {
+      .logo-container {
+        content: url("../../../assets/nav/nav-white-logo.png");
+      }
+    }
+
+    .inner-nav-link {
+      color: #fff;
+    }
+
+    .right-nav {
+      .nav-icon {
+        color: #fff;
+        a {
+          color: #fff;
+        }
+      }
+      .nav-auth {
+        a {
+          font-size: max(13.5px, 0.9vw);
+          color: #fff !important;
+        }
+      }
+    }
+  }
+
+  .nav-mode-switch {
+    .icon {
+      color: #fb0;
+    }
+  }
+}

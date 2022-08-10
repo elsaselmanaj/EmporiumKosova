@@ -12,19 +12,43 @@
     flex-wrap: wrap;
     position: relative;
 
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 3rem;
+      .user-card {
+        width: 50% !important;
+        height: 100% !important;
+      }
+      .user-card,
+      .panel {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .user-card {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .panel {
+        width: 100% !important;
+      }
+    }
+
     .user-card {
       width: 28%;
       height: 100%;
-      border: 1px solid red;
+      border: 1px solid #fda576;
       display: flex;
       justify-content: center;
       flex-direction: column;
       position: relative;
+      background-color: #fff;
 
       .cover {
         position: absolute;
         width: 100%;
-        height: 150px;
+        height: 100px;
         top: 0;
         border-radius: 4px 4px 0px 0px;
         -webkit-transition: all 0.4s ease;
@@ -39,7 +63,7 @@
         padding-top: 28%;
         border-radius: 50%;
         background: #fff;
-        margin: 18% auto 0;
+        margin: 10% auto 0;
         .inner-img {
           width: 90%;
           height: 90%;
@@ -101,10 +125,10 @@
           }
           cursor: pointer;
           &:first-child {
-            border-top: 1px solid red;
+            border-top: 1px solid #fda576;
           }
           &:nth-child(2) {
-            border-top: 1px solid red;
+            border-top: 1px solid #fda576;
           }
         }
       }
@@ -114,5 +138,31 @@
       width: 70%;
       // border: 1px solid green;
     }
+  }
+}
+
+body.dark-mode {
+  .profile-page .profile-container {
+    .wrapper {
+      .user-card {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        color: #fff;
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+        .img-container {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          //  color: #fff;
+          transition: 0.4s ease-in-out;
+          -webkit-transition: 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+  .profile-page{
+    background: #191919;
   }
 }

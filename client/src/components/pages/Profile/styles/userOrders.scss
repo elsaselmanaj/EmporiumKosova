@@ -1,14 +1,145 @@
 .user-orders-container {
-//  border: 1px solid red;
+  //  border: 1px solid red;
   align-items: center;
   margin: 0 auto;
   width: 100%;
 
-  .table-container{
-    display: flex;
-    align-items: center;
-   .table{
-    width: 100%;
-   }
+  .table-container {
+    @media (max-width: 1080px) {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 12px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #fad8c5;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fda673;
+        border-radius: 5px;
+      }
+      .table {
+        width: 800px;
+        margin: 0 auto;
+      }
+    }
+    .table {
+      overflow: hidden;
+      .table-header {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        // padding: max(10px, 1vw) max(15px, 1.5vw);
+        //  border: 1px solid red;
+        //   padding: max(10px, 1vw);
+        h5 {
+          font-size: max(14px, 0.925vw);
+          font-weight: 600;
+        }
+        .title {
+          text-align: center;
+        }
+        .title1 {
+          width: 30%;
+          //  border: 1px solid red;
+          @media (max-width: 1080px) {
+            width: 35%;
+          }
+        }
+        .title2 {
+          width: 20%;
+          //  border: 1px solid red;
+          @media (max-width: 1080px) {
+            width: 25%;
+          }
+        }
+        .title3 {
+          width: 25%;
+          //  border: 1px solid red;
+          @media (max-width: 1080px) {
+            width: 30%;
+          }
+        }
+        .title4 {
+          width: 25%;
+          //  border: 1px solid red;
+          @media (max-width: 1080px) {
+            width: 30%;
+          }
+        }
+      }
+      .table-body {
+        padding: max(10px, 1vw) 0;
+        .data {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          //justify-content: space-between;
+          // border: 1px solid red;
+          padding: max(6px, 0.625vw);
+          .id {
+            width: 30%;
+            //  border: 1px solid red;
+            @media (max-width: 1080px) {
+              width: 35%;
+            }
+            a {
+              color: #000;
+            }
+          }
+          .status {
+            width: 20%;
+            //  border: 1px solid red;
+            @media (max-width: 1080px) {
+              width: 25%;
+            }
+            .success {
+              color: #168813;
+            }
+            .danger {
+              color: #d12411;
+            }
+          }
+          .date {
+            width: 25%;
+            //  border: 1px solid red;
+            @media (max-width: 1080px) {
+              width: 30%;
+            }
+          }
+          .total {
+            width: 25%;
+            //  border: 1px solid red;
+            @media (max-width: 1080px) {
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .user-orders-container {
+    .table-container {
+      .table {
+        .table-header {
+          color: #ddd;
+        }
+        .table-body {
+          .data {
+            .id,
+            .date,
+            .total {
+              color: #fff;
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

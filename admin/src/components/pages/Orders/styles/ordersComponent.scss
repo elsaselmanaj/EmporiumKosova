@@ -1,0 +1,30 @@
+.orders-page {
+  overflow: hidden;
+}
+
+.orders-page .orders-component-container {
+  padding: 30px 3%;
+  margin-left: auto;
+  margin-right: auto;
+  .wrapper {
+    border: 1px solid red;
+    .table {
+      .table-header {
+        display: flex;
+         justify-content: space-between;
+        align-items: center;
+        // padding: max(10px, 1vw) max(15px, 1.5vw);
+        //  border: 1px solid red;
+        padding: 0 max(10px, 1vw);
+      }
+      .table-body {
+        padding: 0 max(10px, 1vw);
+        .data {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

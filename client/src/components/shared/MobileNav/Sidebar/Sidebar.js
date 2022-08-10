@@ -91,7 +91,7 @@ const Sidebar = (props) => {
         </div>
 
         <div className="sidebar-icon cart">
-        <Link to='/ShoppingCart'><MdShoppingCart /></Link>
+        <Link to='/ShoppingCart/:id'><MdShoppingCart /></Link>
           <span className="badge">{cartItems.length}</span>
         </div>
 

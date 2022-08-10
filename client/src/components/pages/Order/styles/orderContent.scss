@@ -6,7 +6,7 @@
   margin: max(8%, 120px) 0 max(5%, 50px);
   padding: 0 7.5%;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1200px) {
     padding: 0 5%;
   }
 
@@ -19,24 +19,34 @@
     flex-wrap: wrap;
     padding: max(22px, 2.2vw);
 
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
     .row {
       display: flex;
       align-items: center;
-      //  border: 1px solid red;
-      width: 22%;
+      // border: 1px solid red;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
 
       .circle {
-        border-radius: 100px;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
         align-items: center;
-        font-size: max(15px, 1.2vw);
-        border: 1px solid #9da3be;
-        margin-right: 10px;
+        background: #fff;
+        border: 1px solid #c1cdf5;
+        border-radius: 50%;
+        display: flex;
+        height: max(50px, 4.25vw);
+        justify-content: center;
+        position: relative;
+        width: max(50px, 4.25vw);
+        margin-right: max(15px, 1.25vw);
         svg {
           color: #1f2b63;
+          font-size: max(14px, 1.3vw);
         }
       }
 
@@ -50,13 +60,55 @@
         display: flex;
         flex-direction: column;
 
+        @media (max-width: 800px) {
+          text-align: center;
+        }
+
         h6 {
-          font-size: max(14px, 0.825vw);
+          font-size: max(14px, 0.925vw);
+          font-weight: 600;
+          margin-bottom: max(6px, 0.25vw);
         }
 
         p {
-          font-size: max(13px, 0.725vw);
+          font-size: max(13px, 0.825vw);
+          margin-bottom: max(6px, 0.25vw);
         }
+        .success{
+          color: #168813;
+        }
+
+        .danger{
+          color: #D12411;
+        }
+      }
+    }
+
+    .row1 {
+      width: 25%;
+      @media (max-width: 1000px) {
+        width: 30%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .row2 {
+      width: 25%;
+      @media (max-width: 1000px) {
+        width: 30%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .row3 {
+      width: 20%;
+      @media (max-width: 1000px) {
+        width: 25%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
       }
     }
   }
@@ -72,30 +124,61 @@
     // border: 1px solid blue;
     gap: 1rem;
 
+    .empty {
+      // border: 1px solid red;
+      width: 78%;
+      text-align: center;
+      h5 {
+        font-size: max(14px, 0.825vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        color: #fff;
+        width: 100%;
+        background-color: #1f2b63;
+        padding: max(12px, 1.2vw);
+        font-size: max(14px, 1.2vw);
+      }
+
+      @media (max-width: 1250px) {
+        width: 70%;
+      }
+
+      @media (max-width: 870px) {
+        width: 55%;
+      }
+    }
+
     .order {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      border: 1px solid red;
+      //  border: 1px solid red;
       width: 100%;
       gap: 1rem;
 
+      @media (max-width: 500px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
       .img-container {
         position: relative;
-        width: 10%;
+        width: 15%;
         //    border: 1px solid red;
         .img {
           width: 100%;
           border-radius: 8px;
         }
 
-        @media (max-width: 1000px) {
-          width: 15%;
+        @media (max-width: 800px) {
+          width: 20%;
         }
 
-        @media (max-width: 600px) {
-          width: 40%;
+        @media (max-width: 500px) {
+          width: 100%;
         }
       }
 
@@ -106,23 +189,25 @@
         //    border: 1px solid red;
         width: 25%;
 
+        @media (max-width: 800px) {
+          width: 22%;
+        }
+
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+
         h5 {
-          //    border: 1px solid red;
-          font-size: max(14px, 0.825vw);
+          font-size: max(15px, 1vw);
+          margin-bottom: max(7.5px, 0.5vw);
           font-weight: 600;
-          margin-bottom: 8px;
-          text-align: center;
         }
         a {
           color: #000;
         }
 
         p {
-          font-size: max(13px, 0.725vw);
-        }
-
-        @media (max-width: 600px) {
-          width: 45%;
+          font-size: max(16px, 0.925vw) !important;
         }
       }
     }
@@ -133,6 +218,7 @@
         flex-direction: column;
         margin-bottom: 20px;
         border: 1px solid #1f2b63;
+        background-color: #fff;
         .line {
           display: flex;
           justify-content: space-between;
@@ -148,7 +234,6 @@
           }
         }
       }
-
       @media (max-width: 1000px) {
         width: 45%;
       }
@@ -156,9 +241,62 @@
       @media (max-width: 600px) {
         width: 100%;
       }
+    }
+  }
+}
 
-      #zoid-paypal-buttons-uid_cbbff51e0e_mda6mzg6mdy{
-        display: none !important;
+body.dark-mode{
+  .order-page .order-container{
+    .top {
+      backdrop-filter: blur(max(10px, 0.75vw));
+      -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+      background: hsla(0, 0%, 100%, 0.15);
+      color: #fff;
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+      .row {
+        .info {
+          h6 {
+            color: #ddd;
+          }
+        }
+        .circle {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          transition: 0.4s ease-in-out;
+          -webkit-transition: 0.4s ease-in-out;
+          svg {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .order .info {
+      h5 {
+        color: #ddd;
+      }
+      p {
+        color: #fff;
+      }
+    }
+
+    .table-container {
+      .table {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        color: #fff;
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+        border: 1px solid #ddd;
+        .line {
+          border-bottom: 1px solid #ddd;
+        }
+        h5 {
+          color: #ddd;
+        }
       }
     }
   }

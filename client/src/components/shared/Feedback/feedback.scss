@@ -127,3 +127,18 @@
     }
   }
 }
+
+body.dark-mode{
+  .feedback-container{
+    h2{color: #fff;}
+    .inner{
+      backdrop-filter: blur(max(10px, 0.75vw));
+      -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+      background: hsla(0, 0%, 100%, 0.15);
+      color: #fff;
+      transition: 0.4s ease-in-out;
+      -webkit-transition: 0.4s ease-in-out;
+      border: 1px solid transparent;
+    }
+  }
+}

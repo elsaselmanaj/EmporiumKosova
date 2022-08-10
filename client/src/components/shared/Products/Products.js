@@ -5,7 +5,9 @@ import './products.scss'
 import {useDispatch, useSelector} from 'react-redux'
 import { listProduct } from '../../../store/actions/productAction'
 
-const Products = () => {
+const Products = (props) => {
+
+  const {keyword} = props
 
   const dispatch = useDispatch();
 
@@ -13,8 +15,8 @@ const Products = () => {
   const {loading, error, products} = productList;
 
   useEffect(() => {
-    dispatch(listProduct());
-  }, [dispatch]);
+    dispatch(listProduct(keyword));
+  }, [dispatch, keyword]);
   
   return (
     <div className='products-container'>

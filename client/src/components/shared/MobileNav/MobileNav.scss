@@ -169,3 +169,30 @@
         transform: translateX(0%);
     }
 }
+
+body.dark-mode{
+  .nav .mobile-sidebar {
+    background-color: #171717;
+    .sidebar-logo-row {
+      .mobile-logo-container {
+        content: url("../../../assets/nav/nav-white-logo.png");
+      }
+    }
+    .mobile-sidebar-links {
+      .nav-sidebar-link {
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    .icons {
+      .sidebar-icon {
+        color: #fff;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
