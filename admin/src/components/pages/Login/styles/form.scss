@@ -78,8 +78,48 @@
       }
 
       button {
-       // border: none;
+        border: none;
         margin: 0 auto;
+        background-color: #ec3625;
+      }
+
+      button:before {
+        background-color: #dd3122;
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .login-page {
+    .form-container {
+      form {
+        h1 {
+          color: #fff;
+        }
+        .input-content .inner-input-content {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          color: #fff;
+          border: 1px solid transparent;
+          input {
+            background: none;
+          }
+        }
+
+        .input-content {
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-transition: background-color 5000s ease-in-out 0s;
+            -webkit-box-shadow: 0 0 0px 1000px #3a3a3a inset;
+            box-shadow: 0 0 0px 1000px #3a3a3a inset;
+            -webkit-text-fill-color: #fff !important;
+          }
+        }
       }
     }
   }

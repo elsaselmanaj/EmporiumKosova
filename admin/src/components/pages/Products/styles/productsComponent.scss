@@ -5,88 +5,156 @@
 .products-page {
   .products-component-container {
     padding: 30px 3%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+
+    h1 {
+      font-size: max(20px, 1.7vw);
+      margin: max(5px, 1vw) 0 max(22.5px, 2.5vw);
+      text-align: center;
+      -webkit-animation: tracking-in-expand 0.7s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    }
 
     .wrapper {
-      border: 1px solid red;
+     // border: 1px solid red;
+
+      @media (max-width: 1200px) {
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+          height: 12px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #fad8c5;
+          border-radius: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #fda673;
+          border-radius: 5px;
+        }
+        .table {
+          width: 800px;
+          margin: 0 auto;
+        }
+      }
 
       .table {
         overflow: hidden;
-
         .table-header {
           display: flex;
-        //  justify-content: space-between;
           align-items: center;
-          // padding: max(10px, 1vw) max(15px, 1.5vw);
-        //  border: 1px solid red;
-          padding: 0 max(10px, 1vw);
-
-          .title1{
-            width: 35%;
+          h5 {
+            font-size: max(14.5px, 1vw);
+            font-weight: 600;
+          }
+          .title {
+            //  border: 1px solid red;
+            text-align: center;
           }
 
-          .title2{
-            width: 50%;
-          }
-
-          .title3{
+          .title1 {
             width: 25%;
+            @media (max-width: 1200px) {
+              width: 35%;
+            }
           }
 
-          .title4{
-            width: 30%;
+          .title2 {
+            width: 35%;
+            @media (max-width: 1200px) {
+              width: 45%;
+            }
           }
 
-          .title5{
-            width: 5%;
+          .title3 {
+            width: 15%;
+            @media (max-width: 1200px) {
+              width: 25%;
+            }
+          }
+
+          .title4 {
+            width: 15%;
+            @media (max-width: 1200px) {
+              width: 25%;
+            }
+          }
+
+          .title5 {
+            width: 10%;
+            @media (max-width: 1200px) {
+              width: 20%;
+            }
           }
         }
 
         .table-body {
-            padding: 0 max(10px, 1vw);
+              padding: max(12px, 1.2vw) 0;
           .data {
             display: flex;
             align-items: center;
-           // justify-content: space-between;
+            text-align: center;
+            padding: max(6px, 0.625vw) 0;
+            font-size: max(14.5px, 1vw);
 
-            .id{
-            //    border: 1px solid red;
+            .id {
+              width: 25%;
+              @media (max-width: 1200px) {
                 width: 35%;
+              }
             }
 
-            .product{
-              //  border: 1px solid red;
-                width: 50%;
+            .product {
+              width: 35%;
+              @media (max-width: 1200px) {
+                width: 45%;
+              }
             }
 
-            .stock{
+            .stock {
+              width: 15%;
+              .success {
+                color: #439f41;
+              }
+              .danger {
+                color: #d12411;
+              }
+              @media (max-width: 1200px) {
                 width: 25%;
+              }
             }
 
-            .price{
-                width: 30%;
+            .price {
+              width: 15%;
+              @media (max-width: 1200px) {
+                width: 25%;
+              }
             }
 
-            .action{
+            .action {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 10%;
+              @media (max-width: 1200px) {
+                width: 20%;
+              }
+              a {
+                text-decoration: none;
+                margin-right: max(7.5px, 0.6vw);
+                color: #168813;
+              }
+              .badge {
                 display: flex;
                 align-items: center;
-                a{
-                    text-decoration: none;
-                    margin-right: max(7.5px,0.6vw);
-                    color: #168813;
-                }
-                .badge {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: #ec3625;
-                    border-radius: 50%;
-                    width: 20px;
-                    height: 20px;
-                    font-size: max(11px, 0.625vw);
-                    color: #fff;
-                  }
+                justify-content: center;
+                background-color: #ec3625;
+                border-radius: 50%;
+                width: 25px;
+                height: 25px;
+                font-size: max(11px, 0.825vw);
+                color: #fff;
+              }
             }
           }
         }

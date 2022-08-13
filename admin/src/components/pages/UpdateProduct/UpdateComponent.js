@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/updateComponent.scss";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { editProduct, updateProduct } from "../../../store/actions/productAction";
+import {
+  editProduct,
+  updateProduct,
+} from "../../../store/actions/productAction";
 import { PRODUCT_UPDATE_RESET } from "../../../store/constants/ProductConstants";
+import {FormattedMessage} from 'react-intl'
 
 const UpdateComponent = () => {
-
   const { id } = useParams();
 
   const [name, setName] = useState("");
@@ -30,7 +33,7 @@ const UpdateComponent = () => {
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
-     // toast.success("Product Updated", ToastObjects);
+      // toast.success("Product Updated", ToastObjects);
     } else {
       if (!product.name || product._id !== id) {
         dispatch(editProduct(id));
@@ -57,85 +60,87 @@ const UpdateComponent = () => {
       })
     );
   };
-  
+
   return (
     <div className="update-product-container">
-      <form onSubmit={submitHandler} >
-        <div className="top">
-          <Link to="/Products" className="hover-button">
-            Go to Products
-          </Link>
-          <h1>UPDATE PRODUCT</h1>
-          <button type="submit" className="hover-button">Update</button>
+      <form onSubmit={submitHandler}>
+        <h1><FormattedMessage id="update-product-title"/></h1>
+
+        <div className="input-content">
+          <h6><FormattedMessage id="product-name"/></h6>
+          <div className="inner-input-content">
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Type here"
+            />
+          </div>
         </div>
 
-        <div className="wrapper">
-          <div className="input-content">
-          <h6>Product Name</h6>
-            <div className="inner-input-content">
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Type here"
-              />
-            </div>
+        <div className="input-content">
+        <h6><FormattedMessage id="product-price"/></h6>
+          <div className="inner-input-content">
+            <input
+              type="number"
+              name="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              placeholder="Type here"
+            />
           </div>
+        </div>
 
-          <div className="input-content">
-          <h6>Price</h6>
-            <div className="inner-input-content">
-              <input
-                type="number"
-                name="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder="Type here"
-              />
-            </div>
+        <div className="input-content">
+        <h6><FormattedMessage id="product-stock"/></h6>
+          <div className="inner-input-content">
+            <input
+              type="number"
+              name="stock"
+              value={countInStock}
+              onChange={(e) => setCountInStock(e.target.value)}
+              placeholder="Type here"
+            />
           </div>
+        </div>
 
-          <div className="input-content">
-          <h6>Stock</h6>
-            <div className="inner-input-content">
-              <input
-                type="number"
-                name="stock"
-                value={countInStock}
-                onChange={(e) => setCountInStock(e.target.value)}
-                placeholder="Type here"
-              />
-            </div>
+        <div className="input-content">
+        <h6><FormattedMessage id="product-description"/></h6>
+          <div className="inner-input-content">
+            <textarea
+              placeholder="Type here"
+              name="description"
+              rows="7"
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
           </div>
+        </div>
 
-          <div className="input-content">
-          <h6>Description</h6>
-            <div className="inner-input-content">
-              <textarea
-                placeholder="Type here"
-                name="description"
-                rows="7"
-                required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              ></textarea>
-            </div>
+        <div className="input-content">
+        <h6><FormattedMessage id="product-image"/></h6>
+          <div className="inner-input-content">
+            <input
+              type="text"
+              name="image"
+              value={image}
+              required
+              onChange={(e) => setImage(e.target.value)}
+              placeholder="Enter Image URL"
+            />
           </div>
+        </div>
 
-          <div className="input-content">
-          <h6>Image</h6>
-            <div className="inner-input-content">
-              <input
-                type="text"
-                name="image"
-                value={image}
-                required
-                onChange={(e) => setImage(e.target.value)}
-                placeholder="Enter Image URL"
-              />
-            </div>
-          </div>
+        <div className="links">
+          <Link to="/Products" className="hover-button">
+            <FormattedMessage id="go-to-products-link"/>
+          </Link>
+
+          <button type="submit" className="hover-button">
+            <FormattedMessage id="update-link"/>
+          </button>
         </div>
       </form>
     </div>

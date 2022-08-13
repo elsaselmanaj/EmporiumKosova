@@ -1,0 +1,102 @@
+.latest-orders-container {
+  margin: max(22.5px, 2.5vw) 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  background-color: #fff;
+
+  h3 {
+    font-size: max(14.5px, 1vw);
+    font-weight: 600;
+    margin-bottom: max(15.5px, 1.2vw);
+    text-align: center;
+  }
+
+  .wrapper {
+    overflow: hidden;
+    @media (max-width: 1150px) {
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        height: 12px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #fad8c5;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #fda673;
+        border-radius: 5px;
+      }
+      .datas {
+        width: 800px;
+        margin: 0 auto;
+      }
+    }
+    .datas {
+      padding: max(10px, 1vw) 0;
+      .data {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: max(6px, 0.625vw) 0;
+        font-size: max(14.5px, 1vw);
+        .name {
+          width: 12%;
+          @media (max-width: 1150px) {
+            width: 22%;
+          }
+        }
+        .email {
+          width: 20%;
+          @media (max-width: 1150px) {
+            width: 30%;
+          }
+        }
+        .price {
+          width: 15%;
+          @media (max-width: 1150px) {
+            width: 25%;
+          }
+        }
+        .paid {
+          width: 20%;
+          .success {
+            color: #439f41;
+          }
+          .danger {
+            color: #d12411;
+          }
+          @media (max-width: 1150px) {
+            width: 30%;
+          }
+        }
+        .date {
+          width: 30%;
+          @media (max-width: 1150px) {
+            width: 40%;
+          }
+        }
+        .action {
+          width: 5%;
+          a{
+            color: #439F41;
+            font-size: max(14.5px, 1.4vw);
+          }
+          @media (max-width: 1150px) {
+            width: 18%;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .latest-orders-container {
+    backdrop-filter: blur(max(10px, 0.75vw));
+    -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+    background: hsla(0, 0%, 100%, 0.15);
+    color: #fff;
+    border: 1px solid transparent;
+  }
+}

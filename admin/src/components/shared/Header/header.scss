@@ -10,31 +10,63 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: end;
- // padding-top: 0.5rem;
-// padding-bottom: 0.5rem;
+  // padding-top: 0.5rem;
+  // padding-bottom: 0.5rem;
 
-.content{
-   //border: 1px solid red;
-   display: flex;
-   align-items: center;
-   cursor: pointer;
-   .icon{
-    margin-right: max(11px,0.9vw);
+  .content {
+    //border: 1px solid red;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .icon {
+      margin-right: max(11px, 0.9vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: max(17px, 1.2vw);
+    }
+
+    a {
+      color: #000;
+      display: flex;
+      align-items: center;
+    }
+
+    .profile {
+      content: url("../../../assets/aside/profile.webp");
+      width: max(22px, 1.7vw);
+    }
+  }
+}
+
+.nav-mode-switch {
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: max(15px, 1vw);
+  // margin-right: max(11px, 0.9vw);
+  .icon {
+    font-size: max(17px, 1.2vw);
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: max(17px,1.2vw);
-   }
-
-   a{
-      color: #000;
-      display: flex;
-     align-items: center;
-   }
-
-   .profile{
-    content: url('../../../assets/aside/profile.webp');
-    width: max(22px,1.7vw);
-   }
+  }
 }
+
+body.dark-mode {
+  .header-container {
+    background-color: #171717;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 5px 0px;
+    .content {
+      .icon {
+        color: #fff;
+      }
+    }
+    .nav-mode-switch {
+      .icon {
+        color: #fb0;
+      }
+    }
+  }
 }

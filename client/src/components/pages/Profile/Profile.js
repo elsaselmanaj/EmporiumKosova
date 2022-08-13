@@ -28,7 +28,6 @@ const Profile = () => {
     <div className="profile-container">
       <Tabs className="wrapper">
         <div className="user-card">
-          <div className="cover"></div>
           <div className="img-container">
             <div className="inner-img">
               <div className="img"></div>

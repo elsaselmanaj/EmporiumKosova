@@ -1,24 +1,23 @@
-div {
-  aside {
-   // border: 1px solid red;
+.sidebar-container {
+  .aside {
+    // border: 1px solid red;
     width: 100%;
     max-width: 260px;
     display: block;
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 100%;
     overflow-y: auto;
     background-color: #fff;
     box-shadow: 0 0.1rem 0.25rem rgb(0 0 0 / 8%);
-    z-index: 10;
-    border-right: 1px solid rgba(108,117,125,.25);
-
+    z-index: 3000;
+    border-right: 1px solid rgba(108, 117, 125, 0.25);
     .aside-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 7.5% 10px;
+      margin-bottom: max(22.5px, 2.2vw);
       a {
         display: flex;
         align-items: center;
@@ -27,42 +26,106 @@ div {
           height: max(35px, 2.75vw);
         }
       }
+    }
 
-      button {
-        border: 0;
-        background-color: transparent;
-        font-size: 30px;
-        cursor: pointer;
-        color: #111;
+    .content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .sidebar-link {
         display: flex;
         align-items: center;
-        justify-content: center;
+        // border: 1px solid red;
+        padding: 16px 20px 15px;
+        font-size: max(16px, 1.1vw);
+        svg {
+          display: flex;
+          margin-right: 10px;
+          color: #95989a;
+        }
+        h5 {
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .aside-mini {
+    //display: none;
+    //  max-width: 70px;
+    width: 60px;
+    overflow: visible;
+    position: absolute;
+    min-height: 100%;
+    bottom: auto;
+    opacity: 0;
+    background-color: #fff;
+    z-index: 3000;
+    // border: 1px solid red;
+
+    .mini-top {
+      a {
+        display: flex;
+        align-items: center;
+        .logo-container {
+          content: url("../../../assets/aside/ek-logo.webp");
+          height: max(35px, 2.75vw);
+          margin: 15px auto 25px;
+        }
       }
     }
 
-    .sidebar-links-container {
-        position: relative;
-      .sidebar-link {
-     //   border: 1px solid red;
+    .content-mini {
+      display: flex;
+      flex-direction: column;
+      .mini-sidebar-link {
+        // border: 1px solid red;
         display: flex;
+        align-items: center;
         justify-content: center;
-        a {
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-          width: 160px;
-          svg {
-            font-size: 20px;
-            margin-right: 10px;
-            color: #95989A;
-          }
+        padding: 20px;
+        font-size: 20px;
+        svg {
+          color: #95989a;
+        }
+      }
+    }
+  }
 
-          h5{
-            font-size: 16.5px;
-            color: #000;
-          }
+  @media (max-width: 768px) {
+    .aside {
+      display: none;
+    }
+    .aside-mini{
+      opacity: 1;
+    }
+  }
+}
 
-          
+body.dark-mode {
+  .sidebar-container {
+    .aside {
+      background-color: #171717;
+      box-shadow: rgb(99 99 99 / 20%) 0px 2px 5px 0px;
+      .aside-top{
+        svg{color: #fff;}
+        a{
+          .logo-container {
+            content: url("../../../assets/aside/test.png");
+          }
+        }
+      }
+      .content{
+        .sidebar-link{h5{color: #fff;}}
+      }
+    }
+    .aside-mini{
+      background-color: #171717;
+      box-shadow: rgb(99 99 99 / 20%) 0px 2px 5px 0px;
+      .mini-top{
+        .logo-container {
+          content: url("../../../assets/aside/black.png");
         }
       }
     }

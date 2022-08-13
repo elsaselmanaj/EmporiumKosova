@@ -1,68 +1,155 @@
 .update-product-page {
-    overflow: hidden;
-  }
-  
-  .update-product-page {
-    .update-product-container {
-      padding: 30px 3%;
-      margin-left: auto;
-      margin-right: auto;
-  
-      .top{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+  overflow: hidden;
+}
+
+.update-product-page {
+  .update-product-container {
+    padding: 30px 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding: max(150px, 15vw) 9% max(200px, 20vw);
+    margin: 0 auto;
+    width: 60%;
+    // border: 1px solid red;
+
+    @media (max-width: 1000px) {
+      width: 80%;
+    }
+
+    @media (max-width: 769px) {
+      width: 90%;
+    }
+
+    h1 {
+      font-size: max(20px, 1.7vw);
+      margin: max(5px, 1vw) 0 max(22.5px, 2.5vw);
+      text-align: center;
+      -webkit-animation: tracking-in-expand 0.7s
+        cubic-bezier(0.215, 0.61, 0.355, 1) both;
+      animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+        both;
+    }
+
+    form {
+      margin-bottom: max(22.5px, 2.5vw);
+      width: 100%;
+      //  border: 1px solid red;
+      h1 {
+        font-size: max(20px, 1.7vw);
+        margin-bottom: max(12.5px, 1vw);
+        text-align: center;
       }
-  
-      .wrapper{
-          border: 1px solid red;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-  
-          .input-content {
-              margin: max(22.5px, 2.2vw) 0;
-              input:-webkit-autofill,
-              input:-webkit-autofill:hover,
-              input:-webkit-autofill:focus,
-              input:-webkit-autofill:active {
-                transition: background-color 5000s ease-in-out 0s;
-                -webkit-transition: background-color 5000s ease-in-out 0s;
-                -webkit-box-shadow: 0 0 0px 1000px #fff inset;
-                box-shadow: 0 0 0px 1000px #fff inset;
-                -webkit-text-fill-color: #888 !important;
-              }
-              .inner-input-content {
-                background: #fff;
-                align-items: center;
-                border: 1px solid #e2e2e2;
-                border-radius: 8px;
-                display: flex;
-                padding: 0 max(12px, 0.8vw);
-      
-                &:focus-within {
-                  span {
-                   // color: #f17913;
-                  }
-                }
-                input {
-                  background: #fff;
-                  border: 0 !important;
-                  border-radius: 8px;
-                  color: #888;
-                  flex: 1 1;
-                  font-size: max(12px, 0.725vw);
-                  height: max(35px, 2.8vw);
-                  padding: 0 max(3px, 0.2vw);
-                }
-              }
-  
-            }
-  
-            .input-content{
-              width: 50%;
-            }
+    }
+
+    .input-content {
+      margin: max(18.5px, 1.5vw) 0;
+      h6 {
+        font-size: max(12px, 0.9vw);
+        margin-bottom: 10px;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-transition: background-color 5000s ease-in-out 0s;
+        -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+        box-shadow: 0 0 0px 1000px #fff inset;
+        -webkit-text-fill-color: #888 !important;
+      }
+      .inner-input-content {
+        background: #fff;
+        align-items: center;
+        border: 1px solid #e2e2e2;
+        border-radius: 8px;
+        display: flex;
+        padding: 0 max(12px, 0.8vw);
+
+        &:focus-within {
+          span {
+            color: #f17913;
+          }
+        }
+
+        input,
+        textarea {
+          background: #fff;
+          border: 0 !important;
+          border-radius: 8px;
+          color: #888;
+          flex: 1 1;
+          font-size: max(12px, 0.725vw);
+          height: max(35px, 2.8vw);
+          padding: 0 max(3px, 0.2vw);
+          outline: none !important;
+        }
+        textarea {
+          height: max(75px, 7.8vw);
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .hover-button {
+        background-color: #ec3625;
+      }
+      .hover-button::before {
+        background-color: #dd3122;
+      }
+
+      button {
+        border: none;
+        background-color: #f17913 !important;
+      }
+      button:before {
+        background-color: #e37413 !important;
+      }
+
+      @media (max-width: 370px) {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
   }
+}
+
+body.dark-mode {
+  .update-product-page .update-product-container {
+    form {
+      .input-content {
+        p {
+          color: #fff;
+        }
+        .inner-input-content {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          color: #fff;
+          border: 1px solid transparent;
+          input,
+          textarea {
+            background: none;
+            color: #fff;
+          }
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-transition: background-color 5000s ease-in-out 0s;
+          -webkit-box-shadow: 0 0 0px 1000px #3a3a3a inset;
+          box-shadow: 0 0 0px 1000px #3a3a3a inset;
+          -webkit-text-fill-color: #fff !important;
+        }
+      }
+    }
+  }
+}

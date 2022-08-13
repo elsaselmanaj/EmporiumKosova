@@ -1,23 +1,97 @@
-.users-page{overflow: hidden;}
+.users-page {
+  overflow: hidden;
+}
 
-.users-page{
-    .users-component-container{
-        padding: 30px 3%;
-        margin-left: auto;
-        margin-right: auto;
+.users-page {
+  .users-component-container {
+    padding: 30px 3%;
+    margin: 0 auto;
 
+    h1 {
+      font-size: max(20px, 1.7vw);
+      margin: max(5px, 1vw) 0 max(22.5px, 2.5vw);
+      text-align: center;
+      -webkit-animation: tracking-in-expand 0.7s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    }
+
+    .wrapper {
+     // border: 1px solid red;
+
+      .cards {
+     //   border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card-container {
+          display: flex;
+          flex-direction: column;
+          margin: max(20px, 1.5vw) 0;
+          position: relative;
+          width: 30%;
+          //  border: 1px solid red;
+
+          @media(max-width: 1000px){
+            width: 48%;
+          }
+
+          @media(max-width: 500px){
+            width: 100%;
+          }
+
+          .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            flex: 1 1;
+            overflow: hidden;
+            padding: max(25px, 2.5vw) max(30px, 3vw);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .inline {
+              display: flex;
+              align-items: center;
+              margin-bottom: max(15.5px, 1.2vw);
+              .profile {
+                content: url("../../../../assets/aside/user-img.webp");
+                height: max(40px, 5vw);
+                border: 1px solid #ddd;
+                border-radius: 50%;
+                margin-right: max(15.5px, 1.2vw);
+              }
+
+              h5 {
+                font-size: max(13px, 0.825vw);
+                font-weight: 600;
+              }
+            }
+
+            p{
+                font-size: max(13px, 0.825vw);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode{
+    .users-page .users-component-container{
         .wrapper{
-            border: 1px solid red;
-            
-
             .cards{
-                border: 1px solid red;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .card{
-                    border: 1px solid red;
+                .card-container{
+                    .card{
+                        backdrop-filter: blur(max(10px, 0.75vw));
+                        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+                        background: hsla(0, 0%, 100%, 0.15);
+                        color: #fff;
+                        border: 1px solid transparent;
+                    }
                 }
             }
         }

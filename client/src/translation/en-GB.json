@@ -4,6 +4,8 @@
     "navbar-main-link3": "About",
     "navbar-main-link4": "Contact",
     "navbar-main-link5": "Blog",
+    "profile": "Profile",
+    "logout": "Logout",
     "log-in": "Log In",
     "sign-up": "Sign Up",
     "get-our-app": "Get our app:",
@@ -147,5 +149,17 @@
     "user-orders-date": "DATE",
     "user-orders-total": "TOTAL",
     "user-orders-paid": "Paid",
-    "user-orders-not-paid": "Not Paid"
+    "user-orders-not-paid": "Not Paid",
+    "single-product-reviews": "Reviews",
+    "no-rw": "No reviews",
+    "customer-rw": "Write a customer review",
+    "please": "Please",
+    "write-rw": "to write a review",
+    "related-products-title": "Related Products",
+    "contact-form-title": "Contact Us",
+    "contact-form-name": "Name",
+    "contact-form-subject": "Subject",
+    "contact-form-message": "Message",
+    "submit": "Submit",
+    "map-title": "Visit Us"
 }

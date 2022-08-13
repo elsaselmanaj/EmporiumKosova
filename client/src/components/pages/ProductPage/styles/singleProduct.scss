@@ -131,7 +131,7 @@
       //  border: 1px solid red;
       width: 32.9%;
       flex-shrink: 0;
-      .no-rw{
+      .no-rw {
         font-size: max(20px, 0.9vw);
       }
 
@@ -142,6 +142,9 @@
         margin-bottom: max(18px, 1.55vw);
         width: 70%;
         h6 {
+          text-align: center;
+        }
+        .no-rw {
           text-align: center;
         }
       }
@@ -182,6 +185,13 @@
       //  border: 1px solid red;
       width: 60%;
       flex-shrink: 0;
+
+      .login-first {
+        font-size: max(15px, 0.9vw);
+        a {
+          color: #ec3625;
+        }
+      }
 
       @media (max-width: 1000px) {
         width: 55%;
@@ -263,8 +273,6 @@ body.dark-mode {
         backdrop-filter: blur(max(10px, 0.75vw));
         -webkit-backdrop-filter: blur(max(10px, 0.75vw));
         background: hsla(0, 0%, 100%, 0.15);
-        transition: 0.4s ease-in-out;
-        -webkit-transition: 0.4s ease-in-out;
       }
       .content {
         color: #fff;
@@ -274,8 +282,6 @@ body.dark-mode {
             -webkit-backdrop-filter: blur(max(10px, 0.75vw));
             background: hsla(0, 0%, 100%, 0.15);
             color: #fff;
-            transition: 0.4s ease-in-out;
-            -webkit-transition: 0.4s ease-in-out;
             option {
               color: #fff;
               background-color: #3a3a3a;
@@ -291,7 +297,7 @@ body.dark-mode {
           color: #fff;
         }
 
-        .no-rw{
+        .no-rw {
           color: #fff;
         }
         .review-wrapper {
@@ -299,15 +305,11 @@ body.dark-mode {
           -webkit-backdrop-filter: blur(max(10px, 0.75vw));
           background: hsla(0, 0%, 100%, 0.15);
           color: #fff;
-          transition: 0.4s ease-in-out;
-          -webkit-transition: 0.4s ease-in-out;
           .comment {
             backdrop-filter: blur(max(10px, 0.75vw));
             -webkit-backdrop-filter: blur(max(10px, 0.75vw));
             background: hsla(0, 0%, 100%, 0.15);
             color: #000;
-            transition: 0.4s ease-in-out;
-            -webkit-transition: 0.4s ease-in-out;
           }
         }
       }
@@ -323,17 +325,19 @@ body.dark-mode {
             backdrop-filter: blur(max(10px, 0.75vw));
             -webkit-backdrop-filter: blur(max(10px, 0.75vw));
             background: hsla(0, 0%, 100%, 0.15);
-           color: #fff;
-            transition: 0.4s ease-in-out;
-            -webkit-transition: 0.4s ease-in-out;
+            color: #fff;
           }
 
-          select{
+          select {
             option {
               color: #fff;
               background-color: #3a3a3a;
             }
           }
+        }
+
+        .row2 {
+          color: #fff;
         }
       }
     }

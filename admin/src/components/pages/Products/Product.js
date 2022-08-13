@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles/productsComponent.scss";
 import { Link } from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../../store/actions/productAction";
+import {FormattedMessage} from 'react-intl'
 
 const Product = (props) => {
   const { product } = props;
@@ -19,20 +20,21 @@ const Product = (props) => {
       <div className="data">
         <div className="id">{product._id}</div>
 
-        <div className="product">
-          {/* <div className="img" style={{ content: `url(${product.image})` }}></div> */}
-          <p className="name">{product.name}</p>
-        </div>
+        <div className="product">{product.name}</div>
 
         <div className="stock">
           {" "}
-          {product.countInStock > 0 ? <p>In Stock</p> : <p>Out of Stock</p>}
+          {product.countInStock > 0 ? (
+            <p className="success"><FormattedMessage id="in-stock"/></p>
+          ) : (
+            <p className="danger"><FormattedMessage id="out-of-stock"/></p>
+          )}
         </div>
 
         <div className="price">{product.price} EUR</div>
 
         <div className="action">
-          <Link to={`/UpdateProduct/${product._id}/edit`}>Edit</Link>
+          <Link to={`/UpdateProduct/${product._id}/edit`}>EDIT</Link>
 
           <Link
             to="/Products"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/singleProduct.scss";
 import Rating from "../../shared/Products/Rating";
+import RelatedProducts from "./RelatedProducts";
 import { FormattedMessage } from "react-intl";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -123,7 +124,7 @@ const SingleProduct = () => {
               defaultMessage="Reviews"
             />
           </h6>
-          {product.reviews.length === 0 && <div className="no-rw">No reviews</div>}
+          {product.reviews.length === 0 && <div className="no-rw"><FormattedMessage id="no-rw"/></div>}
           {product.reviews.map((review) => (
             <div className="review-wrapper" key={review._id}>
               <h5>{review.name}</h5>
@@ -135,7 +136,7 @@ const SingleProduct = () => {
         </div>
 
         <div className="right">
-          <h6>Write a customer review</h6>
+          <h6><FormattedMessage id="customer-rw"/></h6>
           <div className="row1">
             {loadingCreateReview && <Loading />}
             {errorCreateReview && <div>{errorCreateReview}</div>}
@@ -167,12 +168,14 @@ const SingleProduct = () => {
           ) : (
             <div className="row2">
               <div className="login-first">
-                Please <Link to='/Login'> " <strong>Login</strong>" </Link> to write a review
+                <FormattedMessage id="please"/> <Link to='/Login'> " <strong><FormattedMessage id="log-in"/></strong>" </Link> <FormattedMessage id="write-rw"/>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      <RelatedProducts />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts, deleteProduct } from "../../../store/actions/productAction";
 import Product from "./Product";
+import {FormattedMessage} from 'react-intl'
 
 const ProductsComponent = () => {
   const dispatch = useDispatch();
@@ -21,16 +22,16 @@ const ProductsComponent = () => {
 
   return (
     <div className="products-component-container">
-      <h1>PRODUCTS</h1>
+      <h1><FormattedMessage id="products-title"/></h1>
 
       <div className="wrapper">
         <div className="table">
           <div className="table-header">
             <h5 className="title title1">ID</h5>
-            <h5 className="title title2">Product</h5>
-            <h5 className="title title3">Stock</h5>
-            <h5 className="title title4">Price</h5>
-            <h5 className="title title5">Action</h5>
+            <h5 className="title title2"><FormattedMessage id="products-table-t1"/></h5>
+            <h5 className="title title3"><FormattedMessage id="products-table-t2"/></h5>
+            <h5 className="title title4"><FormattedMessage id="products-table-t3"/></h5>
+            <h5 className="title title5"><FormattedMessage id="action"/></h5>
           </div>
           <div className="table-body">
             {products.map((product) => (

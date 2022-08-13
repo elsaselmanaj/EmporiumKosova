@@ -1,0 +1,18 @@
+.dashboard-page {
+  overflow: hidden;
+}
+
+.dashboard-page .dashboard-container {
+  padding: 30px 3%;
+  margin: 0 auto;
+  h1 {
+    font-size: max(20px, 1.7vw);
+    margin: max(5px, 1vw) 0 max(22.5px, 2.5vw);
+    text-align: center;
+    -webkit-animation: tracking-in-expand 0.7s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+}
+
+

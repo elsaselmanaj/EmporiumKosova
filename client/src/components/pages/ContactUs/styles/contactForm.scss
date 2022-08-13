@@ -1,0 +1,123 @@
+.contact-us-page {
+  .contact-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding: max(150px, 15vw) 9% max(200px, 20vw);
+    margin: 0 auto;
+    width: 50%;
+    // border: 1px solid red;
+
+    @media (max-width: 1100px) {
+      width: 72%;
+    }
+
+    @media (max-width: 600px) {
+      width: 90%;
+    }
+
+    form {
+      //  border: 1px solid red;
+      width: 100%;
+      h2 {
+        font-size: max(20px, 1.7vw);
+        margin-bottom: max(12.5px, 1vw);
+        text-align: center;
+      }
+      .input-content {
+        margin: max(22.5px, 2.2vw) 0;
+        p {
+          font-size: max(12px, 0.9vw);
+          margin-bottom: 10px;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-transition: background-color 5000s ease-in-out 0s;
+          -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+          box-shadow: 0 0 0px 1000px #fff inset;
+          -webkit-text-fill-color: #888 !important;
+        }
+        .inner-input-content {
+          background: #fff;
+          align-items: center;
+          border: 1px solid #e2e2e2;
+          border-radius: 8px;
+          display: flex;
+          padding: 0 max(12px, 0.8vw);
+
+          &:focus-within {
+            span {
+              color: #f17913;
+            }
+          }
+
+          input,
+          textarea {
+            background: #fff;
+            border: 0;
+            border-radius: 8px;
+            color: #888;
+            flex: 1 1;
+            font-size: max(12px, 0.725vw);
+            height: max(35px, 2.8vw);
+            padding: 0 max(3px, 0.2vw);
+          }
+
+          textarea {
+            height: max(75px, 7.8vw);
+          }
+        }
+      }
+
+      .hover-button {
+        margin: 0 auto;
+        background-color: #f17913;
+      }
+      .hover-button:before {
+        background-color: #e37413;
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .contact-us-page .contact-form-container {
+    form {
+      h2 {
+        color: #fff;
+      }
+      .input-content {
+        p {
+          color: #fff;
+        }
+        .inner-input-content {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          color: #fff;
+          border: 1px solid transparent;
+          input,
+          textarea {
+            background: none;
+            color: #fff;
+          }
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          transition: background-color 5000s ease-in-out 0s;
+          -webkit-transition: background-color 5000s ease-in-out 0s;
+          -webkit-box-shadow: 0 0 0px 1000px #3A3A3A inset;
+          box-shadow: 0 0 0px 1000px #3A3A3A inset;
+          -webkit-text-fill-color: #fff !important;
+        }
+      }
+    }
+  }
+}

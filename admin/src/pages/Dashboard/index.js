@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import Loading from '../../../components/shared/Loading/Loading';
-const LazyLoaded = lazy(() => import('./Home'));
+const LazyLoaded = lazy(() => import('./Dashboard'));
 
-function Home() {
+function Dashboard() {
   return (
     <Suspense fallback={<Loading />}>
       <LazyLoaded />
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Dashboard;

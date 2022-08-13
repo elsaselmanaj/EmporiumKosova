@@ -8,9 +8,13 @@ import {
 } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrderDetails, deliverOrder } from "../../../store/actions/orderAction";
+import {
+  getOrderDetails,
+  deliverOrder,
+} from "../../../store/actions/orderAction";
 import moment from "moment";
 import Loading from "../../shared/Loading/Loading";
+import {FormattedMessage} from 'react-intl'
 
 const OrderDetailsComponent = () => {
   const { id } = useParams();
@@ -19,7 +23,7 @@ const OrderDetailsComponent = () => {
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { loading, error, order } = orderDetails;
-  
+
   const orderDeliver = useSelector((state) => state.orderDeliver);
   const { loading: loadingDelivered, success: successDelivered } = orderDeliver;
 
@@ -39,7 +43,11 @@ const OrderDetailsComponent = () => {
   }, [dispatch, id, successDelivered]);
 
   const deliverHandler = () => {
-    dispatch(deliverOrder(order));
+    if(!order.isPaid) {
+      window.alert("You should pay first!");
+    } else {
+      dispatch(deliverOrder(order));
+    }
   };
 
   return (
@@ -54,7 +62,7 @@ const OrderDetailsComponent = () => {
             <h6>
               <FaCalendarAlt /> {moment(order.createdAt).format("llll")}
             </h6>
-            <p>Order ID: {order._id}</p>
+            <p><FormattedMessage id="order-id"/>: {order._id}</p>
           </div>
 
           <div className="top">
@@ -64,7 +72,7 @@ const OrderDetailsComponent = () => {
               </div>
 
               <div className="info">
-                <h6>Customer</h6>
+                <h6><FormattedMessage id="customer"/></h6>
                 <p>{order.user.name}</p>
                 <p>
                   <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
@@ -78,9 +86,9 @@ const OrderDetailsComponent = () => {
               </div>
 
               <div className="info">
-                <h6>Order Info</h6>
-                <p>Shipping: {order.shippingAddress.country}</p>
-                <p>Payment method: {order.paymentMethod}</p>
+                <h6><FormattedMessage id="order-info"/></h6>
+                <p><FormattedMessage id="shipping"/> {order.shippingAddress.country}</p>
+                <p><FormattedMessage id="payment-method"/> {order.paymentMethod}</p>
               </div>
             </div>
 
@@ -90,9 +98,9 @@ const OrderDetailsComponent = () => {
               </div>
 
               <div className="info">
-                <h6>Deliver to</h6>
+                <h6><FormattedMessage id="deliver-to"/></h6>
                 <p>
-                  Address: {order.shippingAddress.city}
+                  <FormattedMessage id="address"/> {order.shippingAddress.city}
                   <br />
                   {order.shippingAddress.address}
                   <br /> {order.shippingAddress.postalCode}
@@ -101,63 +109,68 @@ const OrderDetailsComponent = () => {
             </div>
           </div>
 
-          <div className="table">
-            <div className="table-header">
-              <h5 className="title title1">Product</h5>
-              <h5 className="title title2">Unit Price</h5>
-              <h5 className="title title3">Quantity</h5>
-              <h5 className="title title4">Total</h5>
-            </div>
-
-            <div className="table-body">
-              {order.orderItems.map((item, index) => (
-                <div className="data" key={index}>
-                  <div className="product">
-                    <div className="img"></div>
-                    <h6>{item.name}</h6>
-                  </div>
-                  <div className="unit-price">{item.price} EUR</div>
-                  <div className="quantity">{item.qty}</div>
-                  <div className="total">{item.qty * item.price} EUR</div>
+          <div className="center">
+            {order.orderItems.map((item, index) => (
+              <div className="order" key={index}>
+                <div className="img-container">
+                  <div
+                    className="img"
+                    style={{ content: `url(${item.image})` }}
+                  ></div>
                 </div>
-              ))}
-            </div>
+
+                <div className="info i1">
+                  <h5><FormattedMessage id="product"/></h5>
+                  <p>{item.name}</p>
+                </div>
+
+                <div className="info i2">
+                  <h5><FormattedMessage id="unit-price"/></h5>
+                  <p>{item.price} EUR</p>
+                </div>
+
+                <div className="info i3">
+                  <h5><FormattedMessage id="quantity"/></h5>
+                  <p>{item.qty}</p>
+                </div>
+
+                <div className="info i4">
+                  <h5><FormattedMessage id="total"/></h5>
+                  <p>{item.qty * item.price} EUR</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="bottom-center">
-            <div className="payment">
-              <p>Grand Total: {order.totalPrice} EUR</p>
-              <h6>Price EUR</h6>
-            </div>
+          <p><FormattedMessage id="grand-total"/> {order.totalPrice} EUR</p>
 
             <div className="status">
-              <p>Status:</p>
+              <p><FormattedMessage id="status"/>:</p>
               {order.isPaid ? (
-                <span className="success">Payment Done</span>
+                <span className="success"><FormattedMessage id="paid"/></span>
               ) : (
-                <span className="danger">Not Paid</span>
+                <span className="danger"><FormattedMessage id="not-paid"/></span>
               )}
             </div>
           </div>
 
           <div className="links">
             <Link to="/Orders" className="hover-button">
-              Back to Orders
+              <FormattedMessage id="back-to-orders"/>
             </Link>
             <div className="button">
               {order.isDelivered ? (
                 <button className="hover-button">
-                  Delivered at ({moment(order.isDeliveredAt).format("MMM Do YY")})
+                  <FormattedMessage id="delivered-at"/> (
+                  {moment(order.isDeliveredAt).format("MMM Do YY")})
                 </button>
               ) : (
                 <>
-                {loadingDelivered && <Loading />}
-                <button
-                        onClick={deliverHandler}
-                        className="hover-button"
-                      >
-                        Mark as Delivered
-                      </button>
+                  {loadingDelivered && <Loading />}
+                  <button onClick={deliverHandler} className="hover-button">
+                    <FormattedMessage id="mark"/>
+                  </button>
                 </>
               )}
             </div>

@@ -4,6 +4,8 @@
     "navbar-main-link3": "Për ne",
     "navbar-main-link4": "Kontakti",
     "navbar-main-link5": "Blogu",
+    "profile": "Profili",
+    "logout": "Shkycu",
     "log-in": "Identifikohu",
     "sign-up": "Regjistrohu",
     "get-our-app": "Shkarkoni aplikacionin tonë:",
@@ -147,5 +149,17 @@
     "user-orders-date": "DATA",
     "user-orders-total": "TOTALI",
     "user-orders-paid": "Paguar",
-    "user-orders-not-paid": "Pa Paguar"
+    "user-orders-not-paid": "Pa Paguar",
+    "single-product-reviews": "Vlerësimet",
+    "no-rw": "Nuk ka vlerësime",
+    "customer-rw": "Shkruani një vlerësim të klientit",
+    "please": "Ju lutem",
+    "write-rw": "për të shkruar një vlerësim ",
+    "related-products-title": "Produkte të ngjashme",
+    "contact-form-title": "Na kontaktoni",
+    "contact-form-name": "Emri",
+    "contact-form-subject": "Subjekti",
+    "contact-form-message": "Mesazhi",
+    "submit": "Paraqisni",
+    "map-title": "Na vizitoni"
 }

@@ -16,7 +16,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "./store/actions/productAction";
 import { listOrders } from "./store/actions/orderAction";
 
-const Home = lazy(() => import("./pages/Home/Home"));
+import { IntlProvider } from "react-intl";
+import { translate } from "./translation/translate";
+
+
+const Dashboard = lazy(() => import("./pages/Dashboard/Dashboard"));
 const Login = lazy(() => import ("./pages/Login/Login"))
 const Users = lazy(() => import("./pages/Users/Users"))
 const Products = lazy(() => import("./pages/Products/Products"))
@@ -26,6 +30,8 @@ const Orders = lazy(() => import("./pages/Orders/Orders"))
 const OrderDetails = lazy(() => import("./pages/OrderDetails/OrderDetails"))
 
 function App() {
+
+  const language = useSelector((state) => state.language.language);
 
   const dispatch = useDispatch();
 
@@ -42,11 +48,16 @@ function App() {
   return (
     <Router>
     <Suspense fallback={<Loading />}>
+      <IntlProvider
+      locale={language}
+      formats={{ number: "en" }}
+      messages={translate[language]}
+      >
         <ScrollToTop />
 
         <Routes>
          
-         <Route exact path="/" element={<PrivateRouter> <Home /> </PrivateRouter>}/>
+         <Route exact path="/" element={<PrivateRouter> <Dashboard /> </PrivateRouter>}/>
          <Route  path="/Users" element={<PrivateRouter> <Users /> </PrivateRouter>}/>
          <Route  path="/Products" element={<PrivateRouter> <Products /> </PrivateRouter>}/>
          <Route  path="/NewProduct" element={<PrivateRouter> <NewProduct /> </PrivateRouter>}/>
@@ -57,6 +68,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        </IntlProvider>
     </Suspense>
   </Router>
   );

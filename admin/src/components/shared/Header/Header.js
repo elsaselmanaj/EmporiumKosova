@@ -1,35 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./header.scss";
-import { FiMoon } from "react-icons/fi";
-import { AiOutlineBell, AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineBell, AiOutlineLogout, AiOutlineMenu } from "react-icons/ai";
 import { MdSettings } from "react-icons/md";
 import { Link } from "react-router-dom";
-import $ from "jquery";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/actions/userAction";
+import ThemeSwitcher from "./ThemeSwitcher";
+import SelectLanguage from "../SelectLanguage/SelectLanguage";
 
-const Header = () => {
 
+const Header = (props) => {
   const dispatch = useDispatch();
-    
-  useEffect(() => {
-    $("[data-trigger]").on("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      var offcanvas_id = $(this).attr("data-trigger");
-      $(offcanvas_id).toggleClass("show");
-    });
-
-    $(".btn-aside-minimize").on("click", function () {
-      if (window.innerWidth < 768) {
-        $("body").removeClass("aside-mini");
-        $(".navbar-aside").removeClass("show");
-      } else {
-        // minimize sidebar on desktop
-        $("body").toggleClass("aside-mini");
-      }
-    });
-  }, []);
 
   const logoutHandler = () => {
     dispatch(logout());
@@ -38,9 +19,13 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="content">
-        <div className="icon">
-          <FiMoon />
-        </div>
+        <SelectLanguage
+          setLanguage={props.setLanguage}
+          language={props.language}
+        />
+
+        <ThemeSwitcher />
+
         <div className="icon">
           <AiOutlineBell />
         </div>
@@ -49,9 +34,9 @@ const Header = () => {
         </div>
 
         <Link to="/" onClick={logoutHandler}>
-        <div className="icon">
-          <AiOutlineLogout />
-        </div>
+          <div className="icon">
+            <AiOutlineLogout />
+          </div>
         </Link>
         <div className="profile"></div>
       </div>

@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import "./styles/form.scss";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate, useLocation} from "react-router-dom";
 import { BsEnvelope } from "react-icons/bs";
 import { RiLock2Fill } from "react-icons/ri";
 import { FormattedMessage } from "react-intl";
 import {login} from '../../../store/actions/userAction'
 
-const LoginForm = (location) => {
+const LoginForm = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useNavigate();
+  const location = useLocation();
 
   const dispatch = useDispatch();
   
@@ -22,9 +23,9 @@ const LoginForm = (location) => {
 
   useEffect(() => {
     if (userInfo) {
-      history("/");
+      history(redirect);
     }
-  }, [userInfo, history]);
+  }, [userInfo, history, redirect]);
 
   const submitHandler = (e) => {
     e.preventDefault();

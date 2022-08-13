@@ -2,23 +2,35 @@
   margin: max(5%, 50px) 0;
   padding: 0 7.5%;
 
-  @media(max-width: 1000px){
-    padding:0 5%;
+  @media (max-width: 1000px) {
+    padding: 0 5%;
   }
 
-  .google-maps{
+  h2 {
+    font-size: max(20px, 1.7vw);
+    margin-bottom: max(20.5px, 3vw);
+    text-align: center;
+  }
+
+  .google-maps {
     position: relative;
-    padding-bottom: 60%;
+    padding-bottom: 50%;
     height: 0;
     overflow: hidden;
     border-radius: 15px;
 
-    iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 70% !important;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 70% !important;
     }
+  }
+}
+
+body.dark-mode{
+  .contact-us-page .map-container{
+    h2{color: #fff;}
   }
 }

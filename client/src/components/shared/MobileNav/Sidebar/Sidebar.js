@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import ThemeSwitcher from "../../Footer/ThemeSwitcher";
@@ -13,11 +13,20 @@ import {
 import { CgClose } from "react-icons/cg";
 import { BiHeart } from "react-icons/bi";
 import { MdShoppingCart } from "react-icons/md";
+import { logout } from "../../../../store/actions/userAction";
 
 const Sidebar = (props) => {
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
 
   return (
     <div className="mobile-sidebar">
@@ -34,7 +43,7 @@ const Sidebar = (props) => {
         <div className="nav-sidebar-link">
           <Link to="/" className="nav-anchor">
             <FaHome />
-            <FormattedMessage id="nav-sidebar-link1" defaultMessage="Home" />
+            <FormattedMessage id="navbar-main-link1" defaultMessage="Home" />
           </Link>
         </div>
 
@@ -42,7 +51,7 @@ const Sidebar = (props) => {
           <Link to="/ProductsCatalog" className="nav-anchor">
             <FaShoppingBag />
             <FormattedMessage
-              id="nav-sidebar-link2"
+              id="navbar-main-link2"
               defaultMessage="Products"
             />
           </Link>
@@ -51,35 +60,49 @@ const Sidebar = (props) => {
         <div className="nav-sidebar-link">
           <Link to="/AboutUs" className="nav-anchor">
             <FaInfoCircle />
-            <FormattedMessage id="nav-sidebar-link3" defaultMessage="About" />
+            <FormattedMessage id="navbar-main-link3" defaultMessage="About" />
           </Link>
         </div>
 
         <div className="nav-sidebar-link">
           <Link to="/ContactUs" className="nav-anchor">
             <FaPhoneSquareAlt />
-            <FormattedMessage id="nav-sidebar-link4" defaultMessage="Contact" />
+            <FormattedMessage id="navbar-main-link4" defaultMessage="Contact" />
           </Link>
         </div>
 
         <div className="nav-sidebar-link">
           <Link to="/Blog" className="nav-anchor">
             <FaPenSquare />
-            <FormattedMessage id="nav-sidebar-link5" defaultMessage="Blog" />
+            <FormattedMessage id="navbar-main-link5" defaultMessage="Blog" />
           </Link>
         </div>
       </div>
 
-      <div className="sidebar-auth">
-        <Link to="/Login" className="link1">
-          <FormattedMessage id="nav-sidebar-link6" defaultMessage="Log In" />
-        </Link>
-        <Link to="/Signup
+      {userInfo ? (
+        <div className="sidebar-auth">
+          <Link to="/Profile" className="link1">
+            <FormattedMessage id="profile" defaultMessage="Profile" />
+          </Link>
+          <Link to="/Logout" className="link2" onClick={logoutHandler}>
+            <FormattedMessage id="logout" defaultMessage="Logout" />
+          </Link>
+        </div>
+      ) : (
+        <div className="sidebar-auth">
+          <Link to="/Login" className="link1">
+            <FormattedMessage id="log-in" defaultMessage="Log In" />
+          </Link>
+          <Link
+            to="/Signup
         
-        " className="link2">
-          <FormattedMessage id="nav-sidebar-link7" defaultMessage="Sign Up" />
-        </Link>
-      </div>
+        "
+            className="link2"
+          >
+            <FormattedMessage id="sign-up" defaultMessage="Sign Up" />
+          </Link>
+        </div>
+      )}
 
       <div className="icons">
         <div className="sidebar-mode-switcher">
@@ -91,7 +114,9 @@ const Sidebar = (props) => {
         </div>
 
         <div className="sidebar-icon cart">
-        <Link to='/ShoppingCart/:id'><MdShoppingCart /></Link>
+          <Link to="/ShoppingCart/:id">
+            <MdShoppingCart />
+          </Link>
           <span className="badge">{cartItems.length}</span>
         </div>
 

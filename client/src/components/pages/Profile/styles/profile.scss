@@ -38,24 +38,11 @@
     .user-card {
       width: 28%;
       height: 100%;
-      border: 1px solid #fda576;
+      border: 1px solid #ddd;
       display: flex;
       justify-content: center;
       flex-direction: column;
       position: relative;
-      background-color: #fff;
-
-      .cover {
-        position: absolute;
-        width: 100%;
-        height: 100px;
-        top: 0;
-        border-radius: 4px 4px 0px 0px;
-        -webkit-transition: all 0.4s ease;
-        transition: all 0.4s ease;
-        background: linear-gradient(140deg, #f9ab4b, #fda576);
-        // z-index: 1;
-      }
 
       .img-container {
         position: relative;
@@ -86,6 +73,7 @@
             background-size: cover;
           }
         }
+        
       }
 
       .infos {
@@ -125,10 +113,10 @@
           }
           cursor: pointer;
           &:first-child {
-            border-top: 1px solid #fda576;
+            border-top: 1px solid #ddd;
           }
           &:nth-child(2) {
-            border-top: 1px solid #fda576;
+            border-top: 1px solid #ddd;
           }
         }
       }
@@ -149,15 +137,11 @@ body.dark-mode {
         -webkit-backdrop-filter: blur(max(10px, 0.75vw));
         background: hsla(0, 0%, 100%, 0.15);
         color: #fff;
-        transition: 0.4s ease-in-out;
-        -webkit-transition: 0.4s ease-in-out;
         .img-container {
           backdrop-filter: blur(max(10px, 0.75vw));
           -webkit-backdrop-filter: blur(max(10px, 0.75vw));
           background: hsla(0, 0%, 100%, 0.15);
           //  color: #fff;
-          transition: 0.4s ease-in-out;
-          -webkit-transition: 0.4s ease-in-out;
         }
       }
     }

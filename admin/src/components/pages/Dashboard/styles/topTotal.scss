@@ -1,0 +1,120 @@
+.top-total-container {
+  .items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 1000px) {
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .item {
+      border: 1px solid #ddd;
+      background-color: #fff;
+      border-radius: 5px;
+      width: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+
+      @media (max-width: 1000px) {
+        width: 45%;
+      }
+
+      @media (max-width: 500px) {
+        width: 75%;
+      }
+
+      @media (max-width: 400px) {
+        width: 95%;
+      }
+
+      .icon-container {
+        align-items: center;
+        border: 1px solid red;
+        border-radius: 50%;
+        display: flex;
+        height: 4rem;
+        justify-content: center;
+        position: relative;
+        transition: 0.3s ease-out;
+        width: 4rem;
+        margin-right: max(15.5px, 1.2vw);
+        .icon {
+          font-size: max(20px, 1.2vw);
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .block {
+        display: flex;
+        flex-direction: column;
+
+        h5 {
+          font-size: max(13px, 0.825vw);
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: max(13px, 0.825vw);
+        }
+      }
+
+      &:first-child {
+        .icon-container {
+          background-color: #cfe2ff;
+          border: 1px solid #cfe2ff;
+          .icon {
+            color: #084298;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .icon-container {
+          background-color: #d1e7dd;
+          border: 1px solid #d1e7dd;
+          .icon {
+            color: #0f5132;
+          }
+        }
+      }
+
+      &:last-child {
+        .icon-container {
+          background-color: #fff3cd;
+          border: 1px solid #fff3cd;
+          .icon {
+            color: #ffc107;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  .top-total-container {
+    .items {
+      .item {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        color: #fff;
+        border: 1px solid transparent;
+
+        .icon-container {
+          backdrop-filter: blur(max(10px, 0.75vw));
+          -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+          background: hsla(0, 0%, 100%, 0.15);
+          border: 1px solid transparent;
+        }
+      }
+    }
+  }
+}
