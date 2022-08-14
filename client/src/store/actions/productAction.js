@@ -10,8 +10,8 @@ import {
   PRODUCT_CREATE_REVIEW_SUCCESS,
   PRODUCT_CREATE_REVIEW_FAIL
 } from "../constants/ProductConstants";
-import { URL } from "../Url";
 import {logout} from './userAction'
+import { URL } from "../Url";
 
 //PRODUCT LIST
 export const listProduct = (keyword = "") => async (dispatch) => {

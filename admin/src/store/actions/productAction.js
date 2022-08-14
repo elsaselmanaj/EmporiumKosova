@@ -17,7 +17,7 @@ import {
 } from '../constants/ProductConstants'
 import axios from 'axios'
 import {logout} from './userAction'
-import {URL} from '../Url'
+import { URL } from '../Url';
 
 export const listProducts = () => async (dispatch, getState) => {
     try {

@@ -10,7 +10,7 @@ import  moment  from "moment";
 import { ORDER_PAY_RESET } from "../../../store/constants/orderConstants";
 import axios from "axios";
 import Loading from "../../shared/Loading/Loading";
-import URL from "../../../store/Url";
+import { URL } from "../../../store/Url";
 
 const OrderContent = () => {
   const [sdkReady, setSdkReady] = useState(false);

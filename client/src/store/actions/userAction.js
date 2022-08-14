@@ -16,7 +16,7 @@ import {
 } from "../constants/userConstant";
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
 import axios from "axios";
-import { URL } from "../Url";
+import { URL } from '../Url';
 
 //LOGIN
 export const login = (email, password) => async (dispatch) => {

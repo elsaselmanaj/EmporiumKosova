@@ -9,7 +9,7 @@ import {
   USER_LIST_RESET
 } from "../constants/userConstant";
 import axios from "axios";
-import {URL} from '../Url'
+import { URL } from "../Url";
 
 //LOGIN
 export const login = (email, password) => async (dispatch,req,res) => {
