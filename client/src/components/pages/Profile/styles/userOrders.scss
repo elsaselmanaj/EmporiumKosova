@@ -4,6 +4,22 @@
   margin: 0 auto;
   width: 100%;
 
+  .no-orders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+      font-size: max(14px, 1vw);
+      margin-right: max(14px, 0.925vw);
+    }
+    .hover-button{
+      background: #f17913;
+    }
+    .hover-button::before {
+      background: #e07314;
+    }
+  }
+
   .table-container {
     @media (max-width: 1080px) {
       overflow-x: scroll;
@@ -122,6 +138,9 @@
 
 body.dark-mode {
   .user-orders-container {
+    .no-orders{
+      color: #fff;
+    }
     .table-container {
       .table {
         .table-header {

@@ -12,6 +12,7 @@ const Product = (props) => {
   const deletehandler = (id) => {
     if (window.confirm("Are you sure??")) {
       dispatch(deleteProduct(id));
+      alert("The product was successfully deleted!")
     }
   };
 

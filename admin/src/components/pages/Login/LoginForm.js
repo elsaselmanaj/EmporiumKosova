@@ -14,7 +14,7 @@ const LoginForm = () => {
   const history = useNavigate();
 
   const userLogin = useSelector((state) => state.userLogin);
-  const { error, loading, userInfo } = userLogin;
+  const { error: errorLogin, loading, userInfo } = userLogin;
 
   useEffect(() => {
     if (userInfo) {
@@ -29,6 +29,7 @@ const LoginForm = () => {
 
   return (
     <div className="form-container">
+      {errorLogin && <div className="error">{errorLogin}</div>}
       <form onSubmit={submitHandler}>
         <h1>Log In</h1>
 

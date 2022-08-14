@@ -8,7 +8,7 @@
 
   .top {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     margin: 0 0 max(20.5px, 4vw);
@@ -22,20 +22,6 @@
       }
     }
 
-    .row1 {
-      display: flex;
-      align-items: center;
-
-      span {
-        font-size: max(12.5px, 0.85vw);
-      }
-
-      select {
-        margin: 0 max(7.5px, 0.5vw);
-        font-size: max(11.5px, 0.75vw);
-      }
-    }
-
     .search-container {
       border: 1px solid #000;
       padding: max(2px, 0.2vw) max(2px, 0.2vw) max(2px, 0.2vw)
@@ -45,38 +31,56 @@
       background: transparent;
       //  margin: max(12.5px, 1vw) max(12.5px, 1vw) max(12.5px, 1vw) 0;
       width: 40%;
-      input {
-        padding-left: max(3px, 0.3vw);
-        margin-right: max(3px, 0.3vw);
-        font-size: max(12px, 0.8vw);
-        height: max(35px, 2.25vw);
-        color: #fff;
-        background: none;
-        border: 0;
+      form {
+        display: flex;
+        align-items: center;
         width: 100%;
-      }
-      button {
-        border-radius: 8px;
-        border: 0;
-        background: #fcb815;
-        color: #000;
-        font-size: max(13px, 0.85vw);
-        padding: max(5px, 0.4vw) max(17.5px, 1.5vw);
-        height: max(35px, 2.25vw);
-        font-weight: 500;
+        input {
+          padding-left: max(3px, 0.3vw);
+          margin-right: max(3px, 0.3vw);
+          font-size: max(12px, 0.8vw);
+          height: max(35px, 2.25vw);
+          color: #000;
+          background: none;
+          border: 0;
+          width: 100%;
+        }
+        button {
+          border-radius: 8px;
+          border: 0;
+          background: #fcb815;
+          color: #000;
+          font-size: max(13px, 0.85vw);
+          padding: max(5px, 0.4vw) max(17.5px, 1.5vw);
+          height: max(35px, 2.25vw);
+          font-weight: 500;
+        }
       }
     }
+  }
+}
 
-    .row2 {
-      display: flex;
-      align-items: center;
-      span {
-        font-size: max(12.5px, 0.85vw);
-      }
-
-      select {
-        margin: 0 max(7.5px, 0.5vw);
-        font-size: max(11.5px, 0.75vw);
+body.dark-mode {
+  .products-list-container {
+    .top {
+      .search-container {
+        backdrop-filter: blur(max(10px, 0.75vw));
+        -webkit-backdrop-filter: blur(max(10px, 0.75vw));
+        background: hsla(0, 0%, 100%, 0.15);
+        color: #fff;
+        border: 1px solid transparent;
+        form {
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-transition: background-color 5000s ease-in-out 0s;
+            -webkit-box-shadow: 0 0 0px 1000px #3a3a3a inset;
+            box-shadow: 0 0 0px 1000px #3a3a3a inset;
+            -webkit-text-fill-color: #fff !important;
+          }
+        }
       }
     }
   }

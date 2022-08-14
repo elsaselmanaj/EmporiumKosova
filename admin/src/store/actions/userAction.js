@@ -9,6 +9,7 @@ import {
   USER_LIST_RESET
 } from "../constants/userConstant";
 import axios from "axios";
+import {URL} from '../Url'
 
 //LOGIN
 export const login = (email, password) => async (dispatch,req,res) => {
@@ -22,7 +23,7 @@ export const login = (email, password) => async (dispatch,req,res) => {
     };
 
     const { data } = await axios.post(
-      `/api/users/login`,
+      `${URL}/api/users/login`,
       { email, password },
       config
     );
@@ -76,7 +77,7 @@ export const listUser = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users`, config);
+    const { data } = await axios.get(`${URL}/api/users`, config);
 
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
   } catch (error) {

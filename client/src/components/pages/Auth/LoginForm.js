@@ -6,6 +6,7 @@ import { BsEnvelope } from "react-icons/bs";
 import { RiLock2Fill } from "react-icons/ri";
 import { FormattedMessage } from "react-intl";
 import {login} from '../../../store/actions/userAction'
+import Loading from '../../shared/Loading/Loading'
 
 const LoginForm = () => {
 
@@ -19,7 +20,7 @@ const LoginForm = () => {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const userLogin = useSelector((state) => state.userLogin);
-  const { error, loading, userInfo } = userLogin;
+  const { error: errorLogin, loading, userInfo } = userLogin;
 
   useEffect(() => {
     if (userInfo) {
@@ -33,6 +34,7 @@ const LoginForm = () => {
   };
 
   return <div className="form-container">
+    {errorLogin && <div className="error">{errorLogin}</div>}
     <form onSubmit={submitHandler}>
 
         <h1><FormattedMessage id="login-title" defaultMessage="Log In"/></h1>

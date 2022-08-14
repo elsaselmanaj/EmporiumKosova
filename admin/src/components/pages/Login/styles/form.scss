@@ -17,6 +17,16 @@
       width: 90%;
     }
 
+    .error {
+      width: max(210px, 14vw);
+      text-align: center;
+      padding: max(10.5px, 0.8vw);
+      border-radius: 5px;
+      background-color: #e36f65;
+      color: #fff;
+      margin: 0 auto 5%;
+    }
+
     form {
       h1 {
         font-size: max(20px, 1.7vw);

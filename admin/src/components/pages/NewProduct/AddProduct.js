@@ -16,7 +16,7 @@ const AddProduct = () => {
   const dispatch = useDispatch();
 
   const productCreate = useSelector((state) => state.productCreate);
-  const { loading, error, product } = productCreate;
+  const { loading, error: errorAddProduct, product } = productCreate;
 
   useEffect(() => {
     if (product) {
@@ -37,6 +37,7 @@ const AddProduct = () => {
 
   return (
     <div className="new-product-container">
+      {errorAddProduct && <div className="error">{errorAddProduct}</div>}
       <form onSubmit={submitHandler}>
         <h1><FormattedMessage id="new-product-title"/></h1>
 

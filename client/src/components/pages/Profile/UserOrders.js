@@ -19,7 +19,7 @@ const UserOrders = (props) => {
           {orders.length === 0 ? (
             <div className="no-orders">
               <p>No Orders</p>
-              <Link to="/" className="hover-button">
+              <Link to="/ProductsCatalog" className="hover-button">
                 Start Shopping
               </Link>
             </div>

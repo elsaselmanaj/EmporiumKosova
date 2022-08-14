@@ -186,6 +186,16 @@
       width: 60%;
       flex-shrink: 0;
 
+      .reviewed{
+
+        width: max(250px, 14vw);
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #e36f65;
+        color: #fff;
+      }
+
       .login-first {
         font-size: max(15px, 0.9vw);
         a {

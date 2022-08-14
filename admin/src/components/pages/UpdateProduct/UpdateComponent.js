@@ -59,6 +59,7 @@ const UpdateComponent = () => {
         countInStock,
       })
     );
+    alert("The product was successfully updated!")
   };
 
   return (

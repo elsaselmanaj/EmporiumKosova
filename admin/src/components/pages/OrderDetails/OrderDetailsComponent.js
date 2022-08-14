@@ -44,7 +44,7 @@ const OrderDetailsComponent = () => {
 
   const deliverHandler = () => {
     if(!order.isPaid) {
-      window.alert("You should pay first!");
+      window.alert("Order should payed first!");
     } else {
       dispatch(deliverOrder(order));
     }

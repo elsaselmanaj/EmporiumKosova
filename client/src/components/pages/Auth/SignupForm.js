@@ -18,7 +18,7 @@ const SignupForm = (location) => {
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
   const userRegister = useSelector((state) => state.userRegister);
-  const { error, loading, userInfo } = userRegister;
+  const { error: errorSignup, loading, userInfo } = userRegister;
 
   useEffect(() => {
     if (userInfo) {
@@ -33,6 +33,7 @@ const SignupForm = (location) => {
 
   return (
     <div className="form-container">
+      {errorSignup && <div className="error">{errorSignup}</div>}
       <form onSubmit={submitHandler}>
         <h1>
           <FormattedMessage id="signup-title" defaultMessage="Sign Up" />

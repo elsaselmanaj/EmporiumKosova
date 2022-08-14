@@ -139,7 +139,7 @@ const SingleProduct = () => {
           <h6><FormattedMessage id="customer-rw"/></h6>
           <div className="row1">
             {loadingCreateReview && <Loading />}
-            {errorCreateReview && <div>{errorCreateReview}</div>}
+            {errorCreateReview && <div className="reviewed">{errorCreateReview}</div>}
           </div>
 
           {userInfo ? (

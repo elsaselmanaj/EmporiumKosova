@@ -15,7 +15,7 @@ productRoute.post(
     const productExist = await Product.findOne({ name });
     if (productExist) {
       res.status(400);
-      throw new Error("Product name already exist");
+      throw new Error("Product already exist");
     } else {
       const product = new Product({
         name,
@@ -44,7 +44,7 @@ productRoute.get(
   asyncHandler(async (req, res) => {
     const keyword = req.query.keyword ? {
       name: {
-        $regex: req.qurey.keyword,
+        $regex: req.query.keyword,
         $options: "i",
       },
     }

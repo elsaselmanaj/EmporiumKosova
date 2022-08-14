@@ -7,6 +7,7 @@ const productRoute = require("./routes/ProductRoute")
 const userRoute = require("./routes/UserRoute")
 const orderRoute = require("./routes/OrderRoute")
 const {errorHandler, notFound} = require("./middleware/Errors")
+const cors = require("cors");
 
 
 
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGO_URL)
 })
 
 app.use(express.json());
+app.use(cors())
 
 app.use("/api/import", ImportData);
 app.use("/api/products", productRoute);
@@ -34,7 +36,9 @@ app.use(errorHandler);
 
 //app.use('/user', require('./routes/UserRoute'))
 
-app.listen(process.env.PORT || 5000, console.log("Backend server is running!"));
+const PORT = process.env.PORT || 1000
+
+app.listen(PORT, console.log(`Backend server is running in port ${PORT}`));
 
 
 
