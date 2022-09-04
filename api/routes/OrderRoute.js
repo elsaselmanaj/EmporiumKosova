@@ -107,7 +107,7 @@ orderRoute.get(
   })
 );
 
-// ORDER IS PAID
+// ORDER IS DELIVERED
 orderRoute.put(
   "/:id/delivered",
   protect,
